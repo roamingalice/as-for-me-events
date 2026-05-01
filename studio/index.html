@@ -189,7 +189,10 @@ body{line-height:1.65}
   .offer__heading em{font-style:italic;color:var(--brand);font-family:"Cormorant Garamond",serif;font-weight:500;font-size:1.15em;padding:0 .04em;white-space:nowrap}
   .offer__body{font-size:15.5px;color:var(--ink-2);line-height:1.8;margin-bottom:28px;text-wrap:pretty}
   .offer__chips{display:flex;gap:10px;flex-wrap:wrap}
-  .offer__chip{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);color:var(--brand);font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;letter-spacing:.02em}
+  .offer__chip{display:inline-flex;align-items:center;gap:8px;background:var(--brand-soft);color:var(--brand);font-size:13px;font-weight:600;padding:8px 16px;border-radius:999px;letter-spacing:.02em;transition:background .2s,transform .2s}
+  a.offer__chip:hover{background:var(--brand-tint);transform:translateY(-1px)}
+  a.offer__chip::after{content:"→";margin-left:2px;transition:transform .2s}
+  a.offer__chip:hover::after{transform:translateX(2px)}
   .offer__chip::before{content:"+";font-weight:700}
 
   /* Price card — dark deep purple */
@@ -219,8 +222,8 @@ body{line-height:1.65}
         <h3 class="offer__heading">官網單買 <em>4400 元</em>，<br>教室訂購價 <em>2400 元</em>／套。</h3>
         <p class="offer__body">每組包含一件 ASify 運動內衣 + 一件緊身褲。學員可從連結內所有品項任選 —— ASify 運動內衣全系列、官網全系列褲款，款式、布料、尺寸自由挑。</p>
         <div class="offer__chips">
-          <span class="offer__chip">ASify 運動內衣 ×1</span>
-          <span class="offer__chip">緊身褲 ×1</span>
+          <a href="https://www.as-for-me.com/categories/as-free-to-breathe-bra" class="offer__chip" target="_blank" rel="noopener">ASify 運動內衣 ×1</a>
+          <a href="https://www.as-for-me.com/categories/leggings" class="offer__chip" target="_blank" rel="noopener">緊身褲 ×1</a>
         </div>
       </div>
 
@@ -545,7 +548,7 @@ body{line-height:1.65}
         </div>
         <p class="cta-card__hint">
           請在訊息開頭直接說：
-          <strong>「我是 ___ 教室主理人，預計 ___ 月開幕，想訂 ___ 組 ASify 開幕方案。」</strong>
+          <strong>「我是 ___ 教室主理人，教室預計 ___ 月 ___ 日開幕，地點在 ___，想參加 ASify 開幕方案。」</strong>
           客服會接著對齊出貨日跟付款方式。
         </p>
       </div>

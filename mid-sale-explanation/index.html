@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASify 年中一番賞活動說明</title>
+  <style>
+    :root {
+      --ink: oklch(23% 0.026 267);
+      --muted: oklch(47% 0.025 267);
+      --soft: oklch(96% 0.008 267);
+      --paper: oklch(99% 0.004 267);
+      --line: oklch(87% 0.012 267);
+      --brand: oklch(41% 0.1 268);
+      --brand-soft: oklch(92% 0.025 268);
+      --warm: oklch(73% 0.12 58);
+      --warm-soft: oklch(95% 0.04 58);
+      --green: oklch(56% 0.09 154);
+      --green-soft: oklch(93% 0.035 154);
+      --rose: oklch(58% 0.12 19);
+      --rose-soft: oklch(94% 0.035 19);
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 24px;
+      --space-2xl: 32px;
+      --space-3xl: 48px;
+      --space-4xl: 64px;
+      --radius: 8px;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, oklch(98% 0.006 267), var(--paper) 28rem),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: var(--space-3xl) 0 var(--space-4xl);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+      align-items: end;
+      gap: var(--space-3xl);
+      padding: var(--space-3xl) 0 var(--space-2xl);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      inline-size: 10px;
+      block-size: 10px;
+      border-radius: 50%;
+      background: var(--warm);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 13ch;
+      margin-top: var(--space-lg);
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(3rem, 8vw, 6.8rem);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(1.9rem, 4vw, 3.2rem);
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+      max-width: 72ch;
+    }
+
+    .lead {
+      margin-top: var(--space-xl);
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.75;
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in oklch, var(--paper), var(--brand-soft) 62%);
+      padding: var(--space-xl);
+    }
+
+    .hero-panel dl {
+      display: grid;
+      gap: var(--space-lg);
+      margin: 0;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    dd {
+      margin: var(--space-xs) 0 0;
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .section {
+      display: grid;
+      gap: var(--space-xl);
+      padding: var(--space-3xl) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: var(--space-xl);
+    }
+
+    .section-head p {
+      color: var(--muted);
+      padding-top: var(--space-sm);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: var(--space-xl);
+    }
+
+    .card.accent {
+      background: var(--warm-soft);
+      border-color: color-mix(in oklch, var(--warm), var(--line) 65%);
+    }
+
+    .card.green {
+      background: var(--green-soft);
+      border-color: color-mix(in oklch, var(--green), var(--line) 70%);
+    }
+
+    .card.rose {
+      background: var(--rose-soft);
+      border-color: color-mix(in oklch, var(--rose), var(--line) 75%);
+    }
+
+    .card p,
+    .step p,
+    .note p {
+      margin-top: var(--space-sm);
+      color: var(--muted);
+    }
+
+    .metric {
+      display: block;
+      margin-top: var(--space-md);
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    .step {
+      min-height: 180px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: var(--space-lg);
+    }
+
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      inline-size: 32px;
+      block-size: 32px;
+      margin-bottom: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--brand);
+      font-weight: 900;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .prize {
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .qty {
+      font-weight: 900;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 5px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .checklist {
+      display: grid;
+      gap: var(--space-md);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      display: grid;
+      grid-template-columns: 24px minmax(0, 1fr);
+      gap: var(--space-md);
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .checklist li::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      inline-size: 24px;
+      block-size: 24px;
+      border-radius: 50%;
+      background: var(--green-soft);
+      color: var(--green);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: var(--space-sm);
+      padding: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+    }
+
+    .ticket {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in oklch, var(--brand), var(--line) 70%);
+      border-radius: 6px;
+      background: var(--paper);
+      color: var(--brand);
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .ticket.hot {
+      background: var(--brand);
+      color: var(--paper);
+    }
+
+    .ticket.last {
+      background: var(--warm);
+      color: var(--ink);
+      border-color: color-mix(in oklch, var(--warm), var(--ink) 20%);
+    }
+
+    .note {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--brand-soft);
+      padding: var(--space-xl);
+    }
+
+    .footer {
+      padding-top: var(--space-2xl);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .split,
+      .section-head {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .flow {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 24px, 1180px);
+        padding-top: var(--space-xl);
+      }
+
+      .hero {
+        padding-top: var(--space-xl);
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .board {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media print {
+      body {
+        background: var(--paper);
+        font-size: 12px;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .hero,
+      .section {
+        break-inside: avoid;
+        padding: 20px 0;
+      }
+
+      .card,
+      .step,
+      .note,
+      .table-wrap {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Internal Draft · 2026 Midyear</span>
+        <h1>ASify 年中一番賞</h1>
+        <p class="lead">這份頁面是給門市、電商、行銷與營運確認用。活動目標是用官網 LINE 抽券把客人導向門市，再用 NT$1,500 實體一番賞製造到店事件感，同時協助出清指定品項並拉高客單。</p>
+      </div>
+      <aside class="hero-panel" aria-label="活動重點">
+        <dl>
+          <div>
+            <dt>活動主目標</dt>
+            <dd>拉門市人流、清庫存、拉高客單</dd>
+          </div>
+          <div>
+            <dt>門市一番賞</dt>
+            <dd>70 籤 / 每籤 NT$1,500 / 每籤必中</dd>
+          </div>
+          <div>
+            <dt>官網抽券</dt>
+            <dd>LINE 抽獎、發唯一折扣碼、門市核銷贈小禮</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>活動架構</h2>
+        <p>官網與門市各自有任務：官網負責發券與導流，門市負責成交、抽賞、核銷與兌獎。折扣不過度疊加，維持規則簡單。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>官網：LINE 年中抽券</h3>
+          <p>官網滿額後進 LINE 抽獎頁，抽到唯一 SHOPLINE 折扣碼。折扣碼可在官網使用；若到門市使用，門市同事核銷後贈送小禮。</p>
+        </article>
+        <article class="card accent">
+          <h3>門市：NT$1,500 一番賞</h3>
+          <p>純買籤，每籤必中，不抵購物金。現場以 Pad 呈現抽籤、獎項板與兌換狀態，提升體驗感並降低人工錯誤。</p>
+        </article>
+        <article class="card green">
+          <h3>出清策略</h3>
+          <p>五分褲、背心、上衣與指定 Bratop 做成中高階獎項，讓清庫存不被感覺成清倉，而是年中慶限定福利。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>官網抽券流程</h2>
+        <p>LINE 作為主要抽獎與核銷載具，不再設計 Email 備援。門市加碼只保留小禮，不再多折 NT$100。</p>
+      </div>
+      <div class="flow">
+        <article class="step">
+          <span class="step-number">1</span>
+          <h3>官網下單達門檻</h3>
+          <p>訂單完成頁與通知訊息導向 LINE 抽獎頁。門檻與抽獎次數待確認。</p>
+        </article>
+        <article class="step">
+          <span class="step-number">2</span>
+          <h3>LINE 綁定抽獎</h3>
+          <p>使用 LINE user id 綁定抽獎紀錄，避免同一資格重複抽取。</p>
+        </article>
+        <article class="step">
+          <span class="step-number">3</span>
+          <h3>發唯一折扣碼</h3>
+          <p>系統從對應獎級的折扣碼池發出一組未使用碼，顯示於 LINE 券面。</p>
+        </article>
+        <article class="step">
+          <span class="step-number">4</span>
+          <h3>官網或門市使用</h3>
+          <p>官網輸入折扣碼；門市出示 LINE 券面，店員於 POS 點選對應券並核銷贈小禮。</p>
+        </article>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>券級</th>
+              <th>官網使用</th>
+              <th>門市使用</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="prize">A 券</td>
+              <td>滿 NT$4,000 折 NT$500</td>
+              <td>同額折抵 + 小禮</td>
+              <td>不設定免運券；不再疊加到店加碼折扣。</td>
+            </tr>
+            <tr>
+              <td class="prize">B 券</td>
+              <td>滿 NT$3,000 折 NT$300</td>
+              <td>同額折抵 + 小禮</td>
+              <td>門市 POS 需有對應快捷折扣。</td>
+            </tr>
+            <tr>
+              <td class="prize">C 券</td>
+              <td>滿 NT$2,000 折 NT$200</td>
+              <td>同額折抵 + 小禮</td>
+              <td>實際門檻與數量可再調整。</td>
+            </tr>
+            <tr>
+              <td class="prize">D 券</td>
+              <td>指定配件滿 NT$1,500 折 NT$150</td>
+              <td>同額折抵 + 小禮</td>
+              <td>可作為低成本高數量券。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>SHOPLINE 折扣碼機制</h2>
+        <p>建議由 ASify 先在 SHOPLINE 建立各獎級活動與唯一折扣碼，再交給抽獎網站依抽中獎級分配。</p>
+      </div>
+      <div class="split">
+        <article class="card">
+          <h3>CSV 欄位建議</h3>
+          <p>每一組 code 只發一次，且 SHOPLINE 後台設定限用一次。抽獎網站只負責「從未發放清單取碼」。</p>
+          <div class="tag-row" style="margin-top: 16px;">
+            <span class="tag">code</span>
+            <span class="tag">tier</span>
+            <span class="tag">discount_amount</span>
+            <span class="tag">min_spend</span>
+            <span class="tag">channel</span>
+            <span class="tag">status</span>
+            <span class="tag">assigned_line_id</span>
+            <span class="tag">assigned_order_no</span>
+          </div>
+        </article>
+        <article class="note">
+          <h3>操作原則</h3>
+          <p>每個獎級建立自己的 code pool，例如 A500、B300、C200、D150。抽獎頁抽到 A 券時，只能從 A500 的未發碼清單取一組。這樣既能防轉傳，也方便活動後比對實際使用率。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>門市 70 籤一番賞</h2>
+        <p>每籤 NT$1,500，總籤數 70，總銷售額 NT$105,000。獎品以現場尺寸與顏色為準，不事後寄送或調貨。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>獎項</th>
+              <th>數量</th>
+              <th>內容</th>
+              <th>零售價值</th>
+              <th>目的</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="prize">A 賞</td>
+              <td class="qty">2</td>
+              <td>NT$2,200-2,400 褲子任選</td>
+              <td>NT$2,200-2,400</td>
+              <td>高感知價值主獎</td>
+            </tr>
+            <tr>
+              <td class="prize">B 賞</td>
+              <td class="qty">1</td>
+              <td>NT$2,400-2,800 褲子任選</td>
+              <td>NT$2,400-2,800</td>
+              <td>最高褲款獎</td>
+            </tr>
+            <tr>
+              <td class="prize">C 賞</td>
+              <td class="qty">2</td>
+              <td>Victoria / Iris Bratop 任選 1 件</td>
+              <td>NT$1,800</td>
+              <td>指定款出清</td>
+            </tr>
+            <tr>
+              <td class="prize">D 賞</td>
+              <td class="qty">2</td>
+              <td>Hebe / Grace Bratop 任選 1 件</td>
+              <td>NT$2,000</td>
+              <td>指定款出清</td>
+            </tr>
+            <tr>
+              <td class="prize">E 賞</td>
+              <td class="qty">6</td>
+              <td>五分褲任選</td>
+              <td>NT$1,800</td>
+              <td>重點出清品</td>
+            </tr>
+            <tr>
+              <td class="prize">F 賞</td>
+              <td class="qty">6</td>
+              <td>背心任選</td>
+              <td>約 NT$1,600</td>
+              <td>重點出清品</td>
+            </tr>
+            <tr>
+              <td class="prize">G 賞</td>
+              <td class="qty">6</td>
+              <td>上衣任選</td>
+              <td>約 NT$1,600</td>
+              <td>重點出清品</td>
+            </tr>
+            <tr>
+              <td class="prize">H 賞</td>
+              <td class="qty">12</td>
+              <td>襪子、無痕內褲、髮帶四件混搭組</td>
+              <td>NT$2,000</td>
+              <td>提高低階獎價值感</td>
+            </tr>
+            <tr>
+              <td class="prize">I 賞</td>
+              <td class="qty">14</td>
+              <td>品牌帆布袋 + 襪子/無痕內褲/髮帶任選 2 件</td>
+              <td>NT$2,000</td>
+              <td>小物組合出清</td>
+            </tr>
+            <tr>
+              <td class="prize">J 賞</td>
+              <td class="qty">19</td>
+              <td>襪子、無痕內褲、髮帶三件混搭組</td>
+              <td>NT$1,500</td>
+              <td>最低獎仍等值</td>
+            </tr>
+            <tr>
+              <td class="prize">Last One</td>
+              <td class="qty">1</td>
+              <td>風衣任選</td>
+              <td>NT$3,000</td>
+              <td>刺激尾盤購買</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid">
+        <article class="card accent">
+          <h3>對外承諾</h3>
+          <span class="metric">NT$1,500</span>
+          <p>每籤必中，最低帶走等值 ASify 商品組。一番賞金額不可折抵購物金，不可兌換現金。</p>
+        </article>
+        <article class="card">
+          <h3>現場限制</h3>
+          <p>服飾獎項皆以門市現場可選尺寸、顏色為準；無法事後寄送、調貨或保留。規則需在 Pad 與現場告示清楚露出。</p>
+        </article>
+        <article class="card green">
+          <h3>獎項公開</h3>
+          <p>Pad 頁面需顯示總籤數、已抽籤數、剩餘獎項與 Last One 狀態。每次抽完立即更新，減少認知落差。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Pad 無人 POS 抽籤</h2>
+        <p>門市不一定要做紙籤；Pad 可以讓客人自己點籤，同時保留店員控管付款與兌獎。</p>
+      </div>
+      <div class="split">
+        <div>
+          <div class="board" aria-label="Pad 一番賞抽籤示意">
+            <span class="ticket hot">A</span><span class="ticket">12</span><span class="ticket">33</span><span class="ticket">48</span><span class="ticket">07</span>
+            <span class="ticket">51</span><span class="ticket">20</span><span class="ticket hot">B</span><span class="ticket">64</span><span class="ticket">29</span>
+            <span class="ticket">03</span><span class="ticket">18</span><span class="ticket">41</span><span class="ticket">55</span><span class="ticket">11</span>
+            <span class="ticket">39</span><span class="ticket">26</span><span class="ticket">60</span><span class="ticket">02</span><span class="ticket">36</span>
+            <span class="ticket">45</span><span class="ticket">08</span><span class="ticket">57</span><span class="ticket">23</span><span class="ticket last">Last</span>
+            <span class="ticket">14</span><span class="ticket">31</span><span class="ticket">66</span><span class="ticket">05</span><span class="ticket">52</span>
+          </div>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>推薦流程</h3>
+            <p>客人先在 POS 購買「年中一番賞 NT$1,500」，取得小票或抽獎碼後，到 Pad 點選籤格抽獎。</p>
+          </article>
+          <article class="card">
+            <h3>權限分工</h3>
+            <p>客人負責點籤；店員負責確認付款、按下兌換完成、交付獎品。這樣有互動，也有營運控管。</p>
+          </article>
+        </div>
+      </div>
+      <div class="flow">
+        <article class="step">
+          <span class="step-number">1</span>
+          <h3>POS 收款</h3>
+          <p>建立商品「年中一番賞」，售價 NT$1,500，不可套用購物金或折扣券。</p>
+        </article>
+        <article class="step">
+          <span class="step-number">2</span>
+          <h3>輸入抽獎碼</h3>
+          <p>Pad 輸入交易碼或掃小票 QR，確認該筆付款尚未抽過。</p>
+        </article>
+        <article class="step">
+          <span class="step-number">3</span>
+          <h3>客人點籤</h3>
+          <p>畫面翻牌顯示獎項，系統鎖定該籤，不可重抽。</p>
+        </article>
+        <article class="step">
+          <span class="step-number">4</span>
+          <h3>店員兌換</h3>
+          <p>店員交付獎品，按「已兌換」，獎項板與紀錄同步更新。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>核銷 SOP</h2>
+        <p>門市同事只需要辨識券面、點 POS、完成核銷。越少人工判斷，越不容易出錯。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>LINE 官網券核銷</h3>
+          <ul class="checklist">
+            <li>客人出示 LINE 券面與 QR code。</li>
+            <li>店員確認券狀態為「未使用」。</li>
+            <li>POS 點選對應年中券折扣。</li>
+            <li>交付小禮，按下「已核銷」。</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>門市一番賞兌換</h3>
+          <ul class="checklist">
+            <li>確認 POS 已收 NT$1,500。</li>
+            <li>Pad 完成抽籤並顯示獎項。</li>
+            <li>服飾獎項依現場尺寸顏色挑選。</li>
+            <li>店員按「已兌換」並更新獎項狀態。</li>
+          </ul>
+        </article>
+        <article class="card rose">
+          <h3>不可做</h3>
+          <ul class="checklist">
+            <li>一番賞金額不可抵購物金。</li>
+            <li>一番賞不可使用官網折扣碼。</li>
+            <li>獎品不可換現金。</li>
+            <li>服飾獎項不事後寄送、不調貨。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>待確認事項</h2>
+        <p>這些是開發與門市 SOP 前需要先定案的部分。只要這份清單確認，下一步就能做活動頁與 Pad 原型。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>官網門檻</h3>
+          <p>滿多少可抽一次？每筆訂單最多幾抽？是否排除特價品或指定品類？</p>
+        </article>
+        <article class="card">
+          <h3>折扣券級距與數量</h3>
+          <p>A/B/C/D 券的張數、使用期限、門檻、是否限本人或限會員帳號使用。</p>
+        </article>
+        <article class="card">
+          <h3>小禮內容</h3>
+          <p>官網券到門市核銷時贈送的小禮品項、數量與是否限量。</p>
+        </article>
+        <article class="card">
+          <h3>Pad 技術範圍</h3>
+          <p>第一版是否只做抽籤與核銷紀錄，或要串接 SHOPLINE POS / API。</p>
+        </article>
+        <article class="card">
+          <h3>現場庫存</h3>
+          <p>服飾獎項的尺寸、顏色、數量需先盤點，並放在門市可直接兌換的位置。</p>
+        </article>
+        <article class="card">
+          <h3>法規與公告</h3>
+          <p>活動需清楚揭露總籤數、獎項數量、剩餘狀態、兌換限制與不可折現規則。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>建議下一步</h2>
+        <p>先讓同事確認規則能不能跑，再進入設計與技術製作。</p>
+      </div>
+      <div class="grid">
+        <article class="card green">
+          <h3>1. 定案獎項與庫存</h3>
+          <p>確認 70 籤每一賞的可供數量，尤其是褲子、Bratop、五分褲、背心、上衣的實際現貨。</p>
+        </article>
+        <article class="card">
+          <h3>2. 定案 SHOPLINE 規則</h3>
+          <p>建立折扣碼活動、CSV code pool、POS 快捷折扣與「年中一番賞 NT$1,500」商品。</p>
+        </article>
+        <article class="card accent">
+          <h3>3. 做 LINE 與 Pad 原型</h3>
+          <p>先做可內測版本：LINE 抽券頁、券面、門市核銷頁、Pad 一番賞抽籤頁。</p>
+        </article>
+      </div>
+    </section>
+
+    <p class="footer">Draft prepared for ASify internal discussion. Updated: 2026-05-12.</p>
+  </main>
+</body>
+</html>

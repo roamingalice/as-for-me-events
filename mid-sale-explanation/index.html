@@ -359,8 +359,9 @@
     }
 
     .remain-row {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: minmax(72px, 0.35fr) minmax(0, 1fr) minmax(40px, auto);
+      align-items: start;
       gap: var(--space-md);
       padding: 9px 0;
       border-bottom: 1px solid var(--line);
@@ -373,6 +374,14 @@
 
     .remain-row strong {
       color: var(--ink);
+    }
+
+    .remain-row em {
+      font-style: normal;
+      font-weight: 850;
+      color: var(--brand);
+      text-align: right;
+      white-space: nowrap;
     }
 
     .footer {
@@ -611,12 +620,12 @@
           <article class="card">
             <h3>還在籤池裡的獎項</h3>
             <div class="remaining" aria-label="剩餘獎項示意">
-              <div class="remain-row"><strong>B 賞</strong><span>1</span></div>
-              <div class="remain-row"><strong>D 賞</strong><span>1</span></div>
-              <div class="remain-row"><strong>E 賞</strong><span>2</span></div>
-              <div class="remain-row"><strong>H 賞</strong><span>3</span></div>
-              <div class="remain-row"><strong>I 賞</strong><span>2</span></div>
-              <div class="remain-row"><strong>J 賞</strong><span>1</span></div>
+              <div class="remain-row"><strong>B 賞</strong><span>NT$2,400-2,800 褲子任選</span><em>1</em></div>
+              <div class="remain-row"><strong>D 賞</strong><span>Hebe / Grace Bratop 任選 1 件</span><em>1</em></div>
+              <div class="remain-row"><strong>E 賞</strong><span>五分褲任選</span><em>2</em></div>
+              <div class="remain-row"><strong>H 賞</strong><span>襪子、無痕內褲、髮帶四件混搭組</span><em>3</em></div>
+              <div class="remain-row"><strong>I 賞</strong><span>品牌帆布袋 + 襪子/無痕內褲/髮帶任選 2 件</span><em>2</em></div>
+              <div class="remain-row"><strong>J 賞</strong><span>襪子、無痕內褲、髮帶三件混搭組</span><em>1</em></div>
             </div>
           </article>
         </div>

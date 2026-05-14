@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ASify 年中一番賞活動說明</title>
+  <title>ASify 年中一番賞門市說明</title>
   <style>
     :root {
-      --ink: oklch(23% 0.026 267);
-      --muted: oklch(46% 0.025 267);
+      --ink: oklch(22% 0.026 267);
+      --muted: oklch(46% 0.024 267);
       --paper: oklch(99% 0.004 267);
       --soft: oklch(96% 0.008 267);
       --line: oklch(87% 0.012 267);
@@ -36,7 +36,7 @@
 
     body {
       margin: 0;
-      background: linear-gradient(180deg, oklch(98% 0.006 267), var(--paper) 32rem);
+      background: linear-gradient(180deg, oklch(98% 0.006 267), var(--paper) 34rem);
       color: var(--ink);
       font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
       font-size: 16px;
@@ -52,7 +52,7 @@
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
       gap: var(--space-3xl);
       align-items: end;
       padding: var(--space-3xl) 0;
@@ -79,7 +79,7 @@
       max-width: 13ch;
       margin-top: var(--space-lg);
       font-family: Georgia, "Noto Serif TC", serif;
-      font-size: clamp(3rem, 8vw, 6.4rem);
+      font-size: clamp(3rem, 8vw, 6.2rem);
       font-weight: 700;
     }
 
@@ -138,7 +138,7 @@
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(260px, 0.65fr) minmax(0, 1fr);
+      grid-template-columns: minmax(260px, 0.62fr) minmax(0, 1fr);
       gap: var(--space-xl);
       align-items: start;
     }
@@ -168,7 +168,8 @@
       color: var(--muted);
     }
 
-    .card.warm {
+    .card.warm,
+    .note.warm {
       background: var(--warm-soft);
       border-color: color-mix(in oklch, var(--warm), var(--line) 65%);
     }
@@ -186,12 +187,12 @@
 
     .flow {
       display: grid;
-      grid-template-columns: repeat(6, minmax(150px, 1fr));
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
       gap: var(--space-md);
     }
 
     .step {
-      min-height: 190px;
+      min-height: 188px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--paper);
@@ -400,137 +401,66 @@
   <main class="page">
     <section class="hero">
       <div>
-        <span class="eyebrow">Internal Draft · Midyear Campaign</span>
+        <span class="eyebrow">Internal Draft · Store Campaign</span>
         <h1>ASify 年中一番賞</h1>
-        <p class="lead">這是一個串聯官網與門市的年中慶活動。官網消費滿額可以抽 LINE 優惠券，優惠券可在官網使用；如果帶到門市使用，折扣會升級，並由門市同事協助核銷、贈送小禮。門市現場另有 NT$1,500 一番賞，可純買籤，也可在門市消費滿額後用優惠價加購。</p>
+        <p class="lead">這是一個門市限定活動。客人到門市購買一番賞籤，每籤 NT$1,500，每籤必中，最低獎也會帶走等值商品組。活動目標是製造門市話題、協助指定品項出清，並讓客人用有趣的方式認識更多 ASify 商品。</p>
       </div>
       <aside class="summary" aria-label="活動摘要">
         <div class="summary-item">
-          <span>活動目標</span>
-          <strong>拉門市人流、清庫存、拉高客單</strong>
+          <span>活動地點</span>
+          <strong>ASify 門市限定</strong>
         </div>
         <div class="summary-item">
-          <span>官網抽券門檻</span>
-          <strong>滿 NT$3,600 抽 1 次；滿 NT$7,000 抽 2 次</strong>
+          <span>購買方式</span>
+          <strong>NT$1,500 / 籤，每籤必中</strong>
         </div>
         <div class="summary-item">
-          <span>門市一番賞</span>
-          <strong>70 籤，每籤 NT$1,500，每籤必中</strong>
+          <span>獎池規模</span>
+          <strong>70 籤一套，售完為止</strong>
         </div>
       </aside>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>先看流程</h2>
-        <p>活動照時間順序分成六步。官網先發券，客人可以選擇在官網使用，或帶到門市升級折扣；到門市後，才會接上現場消費與一番賞。</p>
+        <h2>活動一句話</h2>
+        <p>門市同事可以這樣跟客人介紹。</p>
+      </div>
+      <div class="note warm">
+        <h3>「年中一番賞門市限定，每抽 NT$1,500、每抽必中，最低也會帶走價值 NT$1,500 的 ASify 商品組；買到最後一張籤，會加贈 Last One 風衣任選。」</h3>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>門市流程</h2>
+        <p>活動執行照這五步走。先付款，再抽籤，再兌獎；每次兌換完成後，Pad 要立即更新剩餘獎項。</p>
       </div>
       <div class="flow">
         <article class="step">
           <span class="step-number">1</span>
-          <h3>官網消費滿額</h3>
-          <p>看訂單總金額：滿 NT$3,600 可抽 1 次，滿 NT$7,000 可抽 2 次。</p>
+          <h3>客人購買</h3>
+          <p>POS 收取「年中一番賞」NT$1,500 / 籤。此商品不折抵購物金。</p>
         </article>
         <article class="step">
           <span class="step-number">2</span>
-          <h3>LINE 抽優惠券</h3>
-          <p>客人進 LINE 活動頁抽券。每張券會對應一組只能使用一次的折扣碼。</p>
+          <h3>開啟 Pad</h3>
+          <p>店員確認付款完成後，開啟 Pad 抽籤頁，讓客人選擇籤格。</p>
         </article>
         <article class="step">
           <span class="step-number">3</span>
-          <h3>選擇使用通路</h3>
-          <p>可直接在官網輸入折扣碼，也可到門市出示 LINE 券面使用升級折扣。</p>
+          <h3>客人點籤</h3>
+          <p>客人點選一格，畫面翻出獎項。抽出後不可重抽或更換。</p>
         </article>
         <article class="step">
           <span class="step-number">4</span>
-          <h3>門市核銷</h3>
-          <p>門市同事確認 LINE 券面，POS 點選對應折扣，完成核銷並贈送小禮。</p>
+          <h3>現場兌獎</h3>
+          <p>店員依畫面獎項交付商品；服飾獎項依現場尺寸、顏色與庫存兌換。</p>
         </article>
         <article class="step">
           <span class="step-number">5</span>
-          <h3>加購或純買一番賞</h3>
-          <p>客人可用 NT$1,500 純買籤；門市消費滿額者，可用優惠價加購抽籤。</p>
-        </article>
-        <article class="step">
-          <span class="step-number">6</span>
-          <h3>Pad 抽籤與兌獎</h3>
-          <p>客人在 Pad 點籤，店員依畫面交付獎品並標記已兌換。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>官網 LINE 優惠券</h2>
-        <p>同一張券可以選擇官網或門市使用。門市折扣比較高，目的是鼓勵客人到店；一旦在門市核銷，該折扣碼就不能再回官網使用。</p>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>抽中券</th>
-              <th>官網使用</th>
-              <th>門市使用</th>
-              <th>核銷規則</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="prize">A 券</td>
-              <td>滿 NT$4,000 折 NT$500</td>
-              <td>滿 NT$4,000 折 NT$600 + 小禮</td>
-              <td>折扣碼限用一次。</td>
-            </tr>
-            <tr>
-              <td class="prize">B 券</td>
-              <td>滿 NT$3,000 折 NT$300</td>
-              <td>滿 NT$3,000 折 NT$400 + 小禮</td>
-              <td>門市核銷後，官網不可再使用。</td>
-            </tr>
-            <tr>
-              <td class="prize">C 券</td>
-              <td>滿 NT$2,000 折 NT$200</td>
-              <td>滿 NT$2,000 折 NT$300 + 小禮</td>
-              <td>不限本人使用，但必須出示 LINE 券面核銷。</td>
-            </tr>
-            <tr>
-              <td class="prize">D 券</td>
-              <td>配件滿 NT$1,500 折 NT$150</td>
-              <td>門市配件滿 NT$1,500 折 NT$250 + 小禮</td>
-              <td>小禮不限量，依門市現場準備品項贈送。</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <h3>折扣碼怎麼控管</h3>
-          <p>每張券都有一組獨立折扣碼，而且只能使用一次。系統發出後會綁定該張 LINE 券，門市核銷後同一組碼也會失效。</p>
-        </article>
-        <article class="card green">
-          <h3>門市同事要做什麼</h3>
-          <p>看客人的 LINE 券面，確認券級與門檻，在 POS 點選對應的年中慶折扣，完成後按核銷並交付小禮。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-head">
-        <h2>門市一番賞怎麼買</h2>
-        <p>一番賞是門市限定現場活動，不抵購物金，也不能用官網優惠券購買。Pad 只負責抽籤、顯示剩餘獎項與核銷紀錄，不需要串接 SHOPLINE POS/API。</p>
-      </div>
-      <div class="grid">
-        <article class="card warm">
-          <h3>純買籤</h3>
-          <p>客人可直接購買「年中一番賞」一籤，售價 NT$1,500。每籤必中，最低獎為價值 NT$1,500 的商品組。</p>
-        </article>
-        <article class="card green">
-          <h3>滿額優惠加購</h3>
-          <p>客人在門市消費滿額後，可以用優惠價加購一番賞籤。建議門檻與價格：滿 NT$3,000 可用 NT$1,200 加購 1 籤；滿 NT$5,000 可用 NT$1,000 加購 1 籤。每人每日限加購 1 籤。</p>
-        </article>
-        <article class="card">
-          <h3>抽籤方式</h3>
-          <p>門市同事完成收款後，開啟 Pad 抽籤頁。客人點選籤格，畫面翻出獎項；店員交付獎品後按「已兌換」。</p>
+          <h3>完成紀錄</h3>
+          <p>店員按「已兌換」，Pad 更新已抽籤數、剩餘獎項與 Last One 狀態。</p>
         </article>
       </div>
     </section>
@@ -538,7 +468,7 @@
     <section class="section">
       <div class="section-head">
         <h2>70 籤獎項表</h2>
-        <p>獎品都以門市現場尺寸、顏色與庫存為準，不事後寄送、不調貨、不保留。每套總籤數 70，售完為止。</p>
+        <p>每套總籤數 70。獎品都以門市現場尺寸、顏色與庫存為準，不事後寄送、不調貨、不提供預留。</p>
       </div>
       <div class="table-wrap">
         <table>
@@ -620,16 +550,33 @@
           </tbody>
         </table>
       </div>
-      <div class="note green">
-        <h3>Last One 怎麼拿</h3>
-        <p>Last One 是「買到該套最後一張籤」的人獲得。假設現場剩 1 張籤，客人購買這最後 1 張，除了原本抽中的獎項，也會加拿 Last One 風衣任選。若客人一次購買多張，且其中包含最後一張，也由該客人獲得 Last One。</p>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Last One 說明</h2>
+        <p>Last One 是尾盤獎勵，規則要讓同事與客人都能一眼理解。</p>
+      </div>
+      <div class="grid">
+        <article class="card green">
+          <h3>怎麼拿到</h3>
+          <p>買到該套最後一張籤的人獲得。除了原本抽中的獎項，會再加贈 Last One 風衣任選。</p>
+        </article>
+        <article class="card">
+          <h3>一次買多張怎麼算</h3>
+          <p>如果客人一次購買多張，且其中包含該套最後一張籤，Last One 由該客人獲得。</p>
+        </article>
+        <article class="card warm">
+          <h3>現場提醒</h3>
+          <p>Pad 與現場獎項板需顯示剩餘籤數與 Last One 狀態。剩餘籤數越少，越要主動提醒客人。</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <h2>Pad 現場畫面</h2>
-        <p>Pad 需要讓客人知道還剩哪些獎，並讓店員可以完成兌獎紀錄。第一版不串接 SHOPLINE，只做抽籤、剩餘獎項與核銷狀態。</p>
+        <p>Pad 只負責抽籤、顯示剩餘獎項與記錄兌換狀態。收款仍由門市 POS 完成。</p>
       </div>
       <div class="split">
         <div class="tickets" aria-label="Pad 抽籤示意">
@@ -642,11 +589,11 @@
         <div class="grid">
           <article class="card">
             <h3>客人看到</h3>
-            <p>可抽籤格、已售出籤格、剩餘獎項、Last One 是否還在。</p>
+            <p>可抽籤格、已售出籤格、剩餘獎項、已抽出獎項與 Last One 是否還在。</p>
           </article>
           <article class="card">
             <h3>店員操作</h3>
-            <p>輸入或選擇付款紀錄，讓客人點籤，確認獎項後按「已兌換」。</p>
+            <p>確認付款後讓客人點籤，依獎項交付商品，最後按「已兌換」。</p>
           </article>
         </div>
       </div>
@@ -654,38 +601,38 @@
 
     <section class="section">
       <div class="section-head">
-        <h2>門市核銷 SOP</h2>
-        <p>同事執行時只需要照順序確認：券、門檻、POS、核銷、贈品或獎品。</p>
+        <h2>門市 SOP</h2>
+        <p>執行時只要照順序確認：付款、抽籤、兌獎、更新狀態。</p>
       </div>
       <div class="grid">
         <article class="card">
-          <h3>LINE 優惠券</h3>
+          <h3>店員操作</h3>
           <ul class="rules">
-            <li>客人出示 LINE 券面。</li>
-            <li>確認券級、使用門檻與未核銷狀態。</li>
-            <li>POS 點選對應年中慶折扣。</li>
-            <li>完成核銷，該折扣碼同步視為已使用。</li>
-            <li>交付小禮。</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>一番賞</h3>
-          <ul class="rules">
-            <li>確認客人已購買一番賞，或符合滿額加購資格。</li>
+            <li>確認客人購買籤數，POS 收款。</li>
             <li>開啟 Pad 抽籤頁，讓客人點選籤格。</li>
             <li>依畫面獎項交付商品。</li>
-            <li>服飾獎項只依現場尺寸顏色兌換。</li>
-            <li>店員按「已兌換」，更新剩餘獎項。</li>
+            <li>服飾獎項只依現場尺寸、顏色與庫存兌換。</li>
+            <li>按「已兌換」，更新剩餘獎項。</li>
           </ul>
         </article>
         <article class="card rose">
           <h3>不可做</h3>
           <ul class="rules warning">
-            <li>一番賞不可抵購物金。</li>
-            <li>官網優惠券不可用來購買一番賞。</li>
-            <li>獎品不可換現金。</li>
-            <li>已核銷折扣碼不可再次使用。</li>
-            <li>服飾獎項不事後寄送、不調貨。</li>
+            <li>一番賞不可折抵購物金。</li>
+            <li>一番賞不可換現金。</li>
+            <li>抽出後不可重抽。</li>
+            <li>獎品不可折現或換成其他非對應獎項。</li>
+            <li>服飾獎項不事後寄送、不調貨、不提供預留。</li>
+          </ul>
+        </article>
+        <article class="card green">
+          <h3>現場話術</h3>
+          <ul class="rules">
+            <li>每籤 NT$1,500，每籤必中。</li>
+            <li>最低獎也是價值 NT$1,500 的商品組。</li>
+            <li>獎項以現場尺寸顏色為準。</li>
+            <li>買到最後一張籤，會加贈 Last One 風衣。</li>
+            <li>Pad 會即時顯示剩餘獎項。</li>
           </ul>
         </article>
       </div>
@@ -693,30 +640,47 @@
 
     <section class="section">
       <div class="section-head">
+        <h2>現場公告規則</h2>
+        <p>這些內容建議放在 Pad 頁面與門市告示，避免現場認知落差。</p>
+      </div>
+      <div class="note">
+        <ul class="rules">
+          <li>本活動為 ASify 門市限定，每籤 NT$1,500，每籤必中。</li>
+          <li>每套共 70 籤，獎項數量與剩餘狀態依現場 Pad 顯示為準。</li>
+          <li>服飾類獎項皆以門市現場可選尺寸、顏色與庫存為準，不提供寄送、調貨或預留。</li>
+          <li>獎品不得兌換現金、購物金或其他非對應獎項。</li>
+          <li>抽籤完成後不得重抽、退換或作廢。</li>
+          <li>買到該套最後一張籤者，可加贈 Last One 風衣任選。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
         <h2>待確認</h2>
-        <p>以下項目確認後，就可以進入 LINE 抽券頁與 Pad 抽籤頁製作。</p>
+        <p>以下項目確認後，就可以進入 Pad 抽籤頁與門市物料製作。</p>
       </div>
       <div class="grid">
         <article class="card">
-          <h3>折扣券張數</h3>
-          <p>A/B/C/D 各要準備幾張折扣碼，以及活動使用期限。</p>
-        </article>
-        <article class="card">
-          <h3>滿額加購規則</h3>
-          <p>目前建議是滿 NT$3,000 可 NT$1,200 加購，滿 NT$5,000 可 NT$1,000 加購；需確認是否採用。</p>
-        </article>
-        <article class="card">
-          <h3>門市小禮</h3>
-          <p>小禮不限量，但仍需確認品項與門市備貨方式。</p>
+          <h3>活動期間</h3>
+          <p>確認開始日期、結束日期，以及 70 籤售完後是否補第二套。</p>
         </article>
         <article class="card">
           <h3>獎品庫存</h3>
-          <p>上衣、背心、五分褲、Bratop、褲子與風衣需先確認現場可兌換數量。</p>
+          <p>上衣、背心、五分褲、Bratop、褲子與風衣需先確認門市可兌換數量。</p>
+        </article>
+        <article class="card">
+          <h3>Pad 權限</h3>
+          <p>確認誰可以開新一套籤、誰可以按已兌換、是否需要每日結算表。</p>
+        </article>
+        <article class="card">
+          <h3>現場物料</h3>
+          <p>需要獎項板、活動規則立牌、Pad 抽籤頁、POS 商品名稱與店員 SOP。</p>
         </article>
       </div>
     </section>
 
-    <p class="footer">Draft prepared for ASify internal discussion. Updated: 2026-05-12.</p>
+    <p class="footer">Draft prepared for ASify internal discussion. Updated: 2026-05-14.</p>
   </main>
 </body>
 </html>

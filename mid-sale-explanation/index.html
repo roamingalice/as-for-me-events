@@ -326,7 +326,7 @@
 
     .tickets {
       display: grid;
-      grid-template-columns: repeat(10, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: var(--space-sm);
       padding: var(--space-lg);
       border: 1px solid var(--line);
@@ -352,10 +352,27 @@
       text-decoration: line-through;
     }
 
-    .ticket.last {
-      background: var(--warm);
+    .remaining {
+      display: grid;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+
+    .remain-row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-md);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .remain-row:last-child {
+      border-bottom: 0;
+    }
+
+    .remain-row strong {
       color: var(--ink);
-      border-color: color-mix(in oklch, var(--warm), var(--ink) 20%);
     }
 
     .footer {
@@ -427,7 +444,7 @@
         <p>門市同事可以這樣跟客人介紹。</p>
       </div>
       <div class="note warm">
-        <h3>「年中一番賞門市限定，每抽 NT$1,500、每抽必中，最低也會帶走價值 NT$1,500 的 ASify 商品組；買到最後一張籤，會加贈 Last One 風衣任選。」</h3>
+        <h3>「年中一番賞門市限定，每抽 NT$1,500、每抽必中，最低也會帶走價值 NT$1,500 的 ASify 商品組；點到最後一格時，會得到原獎項並加贈 Last One 風衣任選。」</h3>
       </div>
     </section>
 
@@ -440,7 +457,7 @@
         <article class="step">
           <span class="step-number">1</span>
           <h3>客人購買</h3>
-          <p>POS 收取「年中一番賞」NT$1,500 / 籤。此商品不折抵購物金。</p>
+          <p>POS 收取「年中一番賞」NT$1,500 / 籤。此商品不使用購物金、不併用折扣、不累計滿額贈。</p>
         </article>
         <article class="step">
           <span class="step-number">2</span>
@@ -544,7 +561,7 @@
             <tr>
               <td class="prize">Last One</td>
               <td class="qty">1</td>
-              <td>該套最後一張籤購買者，加贈風衣任選</td>
+              <td>該套最後一格被點下時，加贈風衣任選</td>
               <td>NT$3,000</td>
             </tr>
           </tbody>
@@ -560,15 +577,15 @@
       <div class="grid">
         <article class="card green">
           <h3>怎麼拿到</h3>
-          <p>買到該套最後一張籤的人獲得。除了原本抽中的獎項，會再加贈 Last One 風衣任選。</p>
+          <p>最後一格被點下時，該客人會得到該籤原本抽中的獎項，並加贈 Last One 風衣任選。</p>
         </article>
         <article class="card">
           <h3>一次買多張怎麼算</h3>
-          <p>如果客人一次購買多張，且其中包含該套最後一張籤，Last One 由該客人獲得。</p>
+          <p>如果客人一次購買多張，且其中包含該套最後一格，Last One 由該客人獲得。</p>
         </article>
         <article class="card warm">
           <h3>現場提醒</h3>
-          <p>Pad 與現場獎項板需顯示剩餘籤數與 Last One 狀態。剩餘籤數越少，越要主動提醒客人。</p>
+          <p>Pad 不需要把 Last One 做成可點的格子。剩最後一格時，店員要提醒客人「這一格會是原獎項 + Last One」。</p>
         </article>
       </div>
     </section>
@@ -576,7 +593,7 @@
     <section class="section">
       <div class="section-head">
         <h2>Pad 現場畫面</h2>
-        <p>Pad 只負責抽籤、顯示剩餘獎項與記錄兌換狀態。收款仍由門市 POS 完成。</p>
+        <p>Pad 只負責抽籤、顯示剩餘獎項與記錄兌換狀態。畫面上是 5x5 的 25 格籤，Last One 不作為獨立籤格顯示。</p>
       </div>
       <div class="split">
         <div class="tickets" aria-label="Pad 抽籤示意">
@@ -584,16 +601,23 @@
           <span class="ticket">06</span><span class="ticket sold">07</span><span class="ticket">08</span><span class="ticket">09</span><span class="ticket">10</span>
           <span class="ticket">11</span><span class="ticket">12</span><span class="ticket sold">13</span><span class="ticket">14</span><span class="ticket">15</span>
           <span class="ticket">16</span><span class="ticket">17</span><span class="ticket">18</span><span class="ticket">19</span><span class="ticket">20</span>
-          <span class="ticket">21</span><span class="ticket">22</span><span class="ticket">23</span><span class="ticket">24</span><span class="ticket last">Last</span>
+          <span class="ticket">21</span><span class="ticket">22</span><span class="ticket">23</span><span class="ticket">24</span><span class="ticket">25</span>
         </div>
         <div class="grid">
           <article class="card">
             <h3>客人看到</h3>
-            <p>可抽籤格、已售出籤格、剩餘獎項、已抽出獎項與 Last One 是否還在。</p>
+            <p>可抽籤格、已售出籤格，以及目前還留在籤池裡的獎項。Last One 只在最後一格被點下時加贈。</p>
           </article>
           <article class="card">
-            <h3>店員操作</h3>
-            <p>確認付款後讓客人點籤，依獎項交付商品，最後按「已兌換」。</p>
+            <h3>還在籤池裡的獎項</h3>
+            <div class="remaining" aria-label="剩餘獎項示意">
+              <div class="remain-row"><strong>B 賞</strong><span>1</span></div>
+              <div class="remain-row"><strong>D 賞</strong><span>1</span></div>
+              <div class="remain-row"><strong>E 賞</strong><span>2</span></div>
+              <div class="remain-row"><strong>H 賞</strong><span>3</span></div>
+              <div class="remain-row"><strong>I 賞</strong><span>2</span></div>
+              <div class="remain-row"><strong>J 賞</strong><span>1</span></div>
+            </div>
           </article>
         </div>
       </div>
@@ -618,7 +642,9 @@
         <article class="card rose">
           <h3>不可做</h3>
           <ul class="rules warning">
-            <li>一番賞不可折抵購物金。</li>
+            <li>一番賞不可使用購物金。</li>
+            <li>一番賞不併用折扣。</li>
+            <li>一番賞不可累計滿額贈。</li>
             <li>一番賞不可換現金。</li>
             <li>抽出後不可重抽。</li>
             <li>獎品不可折現或換成其他非對應獎項。</li>
@@ -631,7 +657,7 @@
             <li>每籤 NT$1,500，每籤必中。</li>
             <li>最低獎也是價值 NT$1,500 的商品組。</li>
             <li>獎項以現場尺寸顏色為準。</li>
-            <li>買到最後一張籤，會加贈 Last One 風衣。</li>
+            <li>最後一格會拿到原獎項，並加贈 Last One 風衣。</li>
             <li>Pad 會即時顯示剩餘獎項。</li>
           </ul>
         </article>
@@ -647,10 +673,11 @@
         <ul class="rules">
           <li>本活動為 ASify 門市限定，每籤 NT$1,500，每籤必中。</li>
           <li>每套共 25 籤，獎項數量與剩餘狀態依現場 Pad 顯示為準。</li>
+          <li>一番賞不可累計滿額贈、不併用折扣、不使用購物金。</li>
           <li>服飾類獎項皆以門市現場可選尺寸、顏色與庫存為準，不提供寄送、調貨或預留。</li>
           <li>獎品不得兌換現金、購物金或其他非對應獎項。</li>
           <li>抽籤完成後不得重抽、退換或作廢。</li>
-          <li>買到該套最後一張籤者，可加贈 Last One 風衣任選。</li>
+          <li>最後一格被點下時，該客人可獲得原本抽中的獎項，並加贈 Last One 風衣任選。</li>
         </ul>
       </div>
     </section>

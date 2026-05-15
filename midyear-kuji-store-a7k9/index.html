@@ -715,7 +715,8 @@
         button.className = "ticket";
         button.textContent = formatNo(ticket.no);
         button.setAttribute("aria-label", `${formatNo(ticket.no)} 號籤`);
-        if (ticket.drawn) button.classList.add(ticket.redeemed ? "redeemed" : "drawn");
+        if (ticket.drawn) button.classList.add("drawn");
+        if (ticket.redeemed) button.classList.add("redeemed");
         if (ticket.no === pendingTicketNo) button.classList.add("pending");
         button.disabled = ticket.drawn;
         button.addEventListener("click", () => selectTicket(ticket.no));

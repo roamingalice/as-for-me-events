@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ASify 年中一番賞 Pad</title>
+  <style>
+    :root {
+      --ink: oklch(22% 0.026 267);
+      --muted: oklch(48% 0.024 267);
+      --paper: oklch(99% 0.004 267);
+      --soft: oklch(95% 0.01 267);
+      --line: oklch(86% 0.014 267);
+      --brand: oklch(39% 0.1 268);
+      --brand-2: oklch(53% 0.09 198);
+      --warm: oklch(74% 0.12 58);
+      --warm-soft: oklch(95% 0.04 58);
+      --green: oklch(55% 0.09 154);
+      --green-soft: oklch(93% 0.035 154);
+      --rose: oklch(57% 0.12 19);
+      --rose-soft: oklch(94% 0.035 19);
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 24px;
+      --space-2xl: 32px;
+      --space-3xl: 48px;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .app {
+      min-height: 100vh;
+      padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+      background:
+        linear-gradient(180deg, oklch(97% 0.012 267), transparent 320px),
+        var(--paper);
+    }
+
+    .lock {
+      min-height: calc(100vh - 36px);
+      display: grid;
+      place-items: center;
+    }
+
+    .lock-box {
+      width: min(520px, 100%);
+      display: grid;
+      gap: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: var(--space-2xl);
+    }
+
+    .lock-title {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .eyebrow {
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(2.4rem, 7vw, 5.4rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      line-height: 1.08;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 850;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .pin-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: var(--space-md);
+    }
+
+    input {
+      width: 100%;
+      min-height: 56px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+      color: var(--ink);
+      padding: 0 var(--space-lg);
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0 var(--space-lg);
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .btn.secondary {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .btn.warn {
+      background: var(--rose);
+      color: var(--paper);
+    }
+
+    .btn.good {
+      background: var(--green);
+      color: var(--paper);
+    }
+
+    .btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.45;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: var(--space-xl);
+      min-height: calc(100vh - 36px);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-xl);
+      align-items: end;
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .title-group {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .title-group p {
+      max-width: 76ch;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: var(--space-sm);
+    }
+
+    .pill {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--paper);
+      padding: 0 var(--space-md);
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    .pill strong {
+      color: var(--ink);
+    }
+
+    .main {
+      display: grid;
+      grid-template-columns: minmax(520px, 1fr) minmax(360px, 0.58fr);
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .board-wrap,
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .board-wrap {
+      padding: var(--space-xl);
+    }
+
+    .board-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    .board-head p {
+      color: var(--muted);
+      margin-top: var(--space-xs);
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-md);
+    }
+
+    .ticket {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in oklch, var(--brand), var(--line) 66%);
+      border-radius: var(--radius);
+      background: var(--soft);
+      color: var(--brand);
+      font-size: clamp(1.5rem, 4vw, 2.7rem);
+      font-weight: 950;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .ticket:not(.drawn):active {
+      transform: scale(0.98);
+    }
+
+    .ticket.pending {
+      background: var(--warm);
+      color: var(--ink);
+    }
+
+    .ticket.drawn {
+      background: oklch(90% 0.01 267);
+      color: oklch(58% 0.02 267);
+      text-decoration: line-through;
+    }
+
+    .ticket.redeemed {
+      background: var(--green-soft);
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .side {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .panel {
+      display: grid;
+      gap: var(--space-lg);
+      padding: var(--space-xl);
+    }
+
+    .result-card {
+      display: grid;
+      gap: var(--space-md);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--soft);
+      padding: var(--space-lg);
+    }
+
+    .result-card.hot {
+      background: var(--warm-soft);
+      border-color: color-mix(in oklch, var(--warm), var(--line) 55%);
+    }
+
+    .result-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    .result-prize {
+      display: grid;
+      gap: var(--space-xs);
+    }
+
+    .result-prize strong {
+      font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+      line-height: 1.1;
+    }
+
+    .bonus {
+      border-radius: var(--radius);
+      background: var(--warm);
+      color: var(--ink);
+      padding: var(--space-md);
+      font-weight: 900;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    .remaining {
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    .remain-row {
+      display: grid;
+      grid-template-columns: minmax(56px, auto) minmax(0, 1fr) minmax(40px, auto);
+      gap: var(--space-md);
+      align-items: start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .remain-row:last-child {
+      border-bottom: 0;
+    }
+
+    .remain-row strong {
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .remain-row em {
+      color: var(--brand);
+      font-style: normal;
+      font-weight: 950;
+      text-align: right;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      padding: var(--space-lg);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .history {
+      display: grid;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+      max-height: 320px;
+      overflow: auto;
+    }
+
+    .history-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      gap: var(--space-md);
+      border-bottom: 1px solid var(--line);
+      padding: var(--space-sm) 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .history-row strong {
+      color: var(--ink);
+    }
+
+    .admin-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .notice {
+      border-radius: var(--radius);
+      background: var(--rose-soft);
+      color: oklch(36% 0.08 19);
+      padding: var(--space-md);
+      font-weight: 800;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 1040px) {
+      .topbar,
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .app {
+        padding: 12px;
+      }
+
+      .board-wrap,
+      .panel,
+      .lock-box {
+        padding: var(--space-lg);
+      }
+
+      .board {
+        gap: var(--space-sm);
+      }
+
+      .pin-row,
+      .actions,
+      .admin-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section id="lockView" class="lock">
+      <div class="lock-box">
+        <div class="lock-title">
+          <span class="eyebrow">ASify Store Pad</span>
+          <h1>年中一番賞</h1>
+          <p class="muted">門市同事輸入 PIN 後即可開始抽籤。請使用同一台 Pad 跑同一套籤。</p>
+        </div>
+        <form id="pinForm" class="pin-row">
+          <input id="pinInput" type="password" inputmode="text" autocomplete="off" placeholder="輸入門市 PIN">
+          <button class="btn" type="submit">進入</button>
+        </form>
+        <p id="pinError" class="notice hidden">PIN 不正確，請再確認一次。</p>
+      </div>
+    </section>
+
+    <section id="appView" class="shell hidden">
+      <header class="topbar">
+        <div class="title-group">
+          <span class="eyebrow">ASify Midyear Kuji</span>
+          <h1>門市一番賞</h1>
+          <p>每籤 NT$1,500，每籤必中。一番賞不可累計滿額贈、不併用折扣、不使用購物金。最後一格會拿到原獎項並加贈 Last One 風衣任選。</p>
+        </div>
+        <div class="stats" aria-label="目前狀態">
+          <span class="pill">套數 <strong id="setNo">1</strong></span>
+          <span class="pill">已抽 <strong id="drawnCount">0</strong></span>
+          <span class="pill">剩餘 <strong id="remainingCount">25</strong></span>
+        </div>
+      </header>
+
+      <div class="main">
+        <section class="board-wrap">
+          <div class="board-head">
+            <div>
+              <h2>請客人點一格</h2>
+              <p>點選後需再按「確認抽籤」，避免誤觸。已兌換格會以綠色標示。</p>
+            </div>
+            <button id="lockButton" class="btn secondary" type="button">鎖定</button>
+          </div>
+          <div id="board" class="board" aria-label="25 格抽籤板"></div>
+        </section>
+
+        <aside class="side">
+          <section class="panel" aria-live="polite">
+            <h2>抽籤結果</h2>
+            <div id="emptyState" class="result-card">
+              <h3>尚未選擇籤格</h3>
+              <p class="muted">收款完成後，請讓客人點選左側任一未抽格。</p>
+            </div>
+
+            <div id="pendingState" class="result-card hot hidden">
+              <div class="result-title">
+                <h3>確認抽籤</h3>
+                <span class="pill">格號 <strong id="pendingNo">--</strong></span>
+              </div>
+              <p class="muted">確認客人要抽這一格後，按下確認抽籤。</p>
+              <div class="actions">
+                <button id="cancelPending" class="btn secondary" type="button">取消</button>
+                <button id="confirmDraw" class="btn" type="button">確認抽籤</button>
+              </div>
+            </div>
+
+            <div id="resultState" class="result-card hidden">
+              <div class="result-title">
+                <h3>抽中結果</h3>
+                <span class="pill">格號 <strong id="resultNo">--</strong></span>
+              </div>
+              <div class="result-prize">
+                <span class="eyebrow" id="resultTier">--</span>
+                <strong id="resultName">--</strong>
+                <p id="resultValue" class="muted">--</p>
+              </div>
+              <div id="lastOneBonus" class="bonus hidden">Last One：加贈風衣任選</div>
+              <button id="redeemButton" class="btn good" type="button">已兌換</button>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>還在籤池裡的獎項</h2>
+            <div id="remainingPrizes" class="remaining"></div>
+          </section>
+
+          <details>
+            <summary>店員管理</summary>
+            <div class="history" id="history"></div>
+            <div class="admin-actions">
+              <button id="exportButton" class="btn secondary" type="button">匯出紀錄</button>
+              <button id="newSetButton" class="btn warn" type="button">開新一套</button>
+            </div>
+          </details>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const ACCESS_PIN = "ASIFY25";
+    const STORAGE_KEY = "asify-midyear-kuji-v1";
+    const AUTH_KEY = "asify-midyear-kuji-auth";
+
+    const PRIZES = [
+      { id: "A", tier: "A 賞", count: 1, name: "NT$2,400-2,800 褲子任選", value: "NT$2,400-2,800" },
+      { id: "B", tier: "B 賞", count: 1, name: "NT$2,200-2,400 褲子任選", value: "NT$2,200-2,400" },
+      { id: "C", tier: "C 賞", count: 2, name: "Victoria / Iris Bratop 任選 1 件", value: "NT$1,800" },
+      { id: "D", tier: "D 賞", count: 2, name: "Hebe / Grace Bratop 任選 1 件", value: "NT$2,000" },
+      { id: "E", tier: "E 賞", count: 3, name: "五分褲任選 + 襪子 1 雙", value: "NT$2,300" },
+      { id: "F", tier: "F 賞", count: 4, name: "背心任選 + 無痕內褲 1 件", value: "約 NT$2,100" },
+      { id: "G", tier: "G 賞", count: 4, name: "上衣任選 + 無痕內褲 1 件", value: "約 NT$2,100" },
+      { id: "H", tier: "H 賞", count: 4, name: "襪子、無痕內褲、髮帶四件混搭組", value: "NT$2,000" },
+      { id: "I", tier: "I 賞", count: 4, name: "品牌帆布袋 + 襪子/無痕內褲/髮帶任選 2 件", value: "NT$2,000" }
+    ];
+
+    const byId = Object.fromEntries(PRIZES.map((prize) => [prize.id, prize]));
+
+    const els = {
+      lockView: document.getElementById("lockView"),
+      appView: document.getElementById("appView"),
+      pinForm: document.getElementById("pinForm"),
+      pinInput: document.getElementById("pinInput"),
+      pinError: document.getElementById("pinError"),
+      board: document.getElementById("board"),
+      setNo: document.getElementById("setNo"),
+      drawnCount: document.getElementById("drawnCount"),
+      remainingCount: document.getElementById("remainingCount"),
+      emptyState: document.getElementById("emptyState"),
+      pendingState: document.getElementById("pendingState"),
+      resultState: document.getElementById("resultState"),
+      pendingNo: document.getElementById("pendingNo"),
+      resultNo: document.getElementById("resultNo"),
+      resultTier: document.getElementById("resultTier"),
+      resultName: document.getElementById("resultName"),
+      resultValue: document.getElementById("resultValue"),
+      lastOneBonus: document.getElementById("lastOneBonus"),
+      remainingPrizes: document.getElementById("remainingPrizes"),
+      history: document.getElementById("history"),
+      cancelPending: document.getElementById("cancelPending"),
+      confirmDraw: document.getElementById("confirmDraw"),
+      redeemButton: document.getElementById("redeemButton"),
+      exportButton: document.getElementById("exportButton"),
+      newSetButton: document.getElementById("newSetButton"),
+      lockButton: document.getElementById("lockButton")
+    };
+
+    let state = loadState();
+    let pendingTicketNo = null;
+    let currentResultNo = null;
+
+    function createDeck() {
+      const pool = PRIZES.flatMap((prize) => Array.from({ length: prize.count }, () => prize.id));
+      const shuffled = shuffle(pool);
+      return shuffled.map((prizeId, index) => ({
+        no: index + 1,
+        prizeId,
+        drawn: false,
+        redeemed: false,
+        drawnAt: null,
+        redeemedAt: null,
+        lastOne: false
+      }));
+    }
+
+    function defaultState(setNo = 1) {
+      return {
+        version: 1,
+        setNo,
+        createdAt: new Date().toISOString(),
+        deck: createDeck()
+      };
+    }
+
+    function shuffle(items) {
+      const arr = [...items];
+      for (let i = arr.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function loadState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) return defaultState();
+        const parsed = JSON.parse(saved);
+        if (!parsed.deck || parsed.deck.length !== 25) return defaultState();
+        return parsed;
+      } catch {
+        return defaultState();
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function isAuthed() {
+      return localStorage.getItem(AUTH_KEY) === "1";
+    }
+
+    function showApp() {
+      els.lockView.classList.add("hidden");
+      els.appView.classList.remove("hidden");
+      render();
+    }
+
+    function showLock() {
+      els.appView.classList.add("hidden");
+      els.lockView.classList.remove("hidden");
+      els.pinInput.value = "";
+      els.pinInput.focus();
+    }
+
+    function getCounts() {
+      const drawn = state.deck.filter((ticket) => ticket.drawn).length;
+      return { drawn, remaining: state.deck.length - drawn };
+    }
+
+    function formatNo(no) {
+      return String(no).padStart(2, "0");
+    }
+
+    function render() {
+      const { drawn, remaining } = getCounts();
+      els.setNo.textContent = state.setNo;
+      els.drawnCount.textContent = drawn;
+      els.remainingCount.textContent = remaining;
+      renderBoard();
+      renderRemaining();
+      renderHistory();
+    }
+
+    function renderBoard() {
+      els.board.innerHTML = "";
+      state.deck.forEach((ticket) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "ticket";
+        button.textContent = formatNo(ticket.no);
+        button.setAttribute("aria-label", `${formatNo(ticket.no)} 號籤`);
+        if (ticket.drawn) button.classList.add(ticket.redeemed ? "redeemed" : "drawn");
+        if (ticket.no === pendingTicketNo) button.classList.add("pending");
+        button.disabled = ticket.drawn;
+        button.addEventListener("click", () => selectTicket(ticket.no));
+        els.board.appendChild(button);
+      });
+    }
+
+    function renderRemaining() {
+      const counts = {};
+      state.deck.filter((ticket) => !ticket.drawn).forEach((ticket) => {
+        counts[ticket.prizeId] = (counts[ticket.prizeId] || 0) + 1;
+      });
+
+      els.remainingPrizes.innerHTML = "";
+      PRIZES.filter((prize) => counts[prize.id]).forEach((prize) => {
+        const row = document.createElement("div");
+        row.className = "remain-row";
+        row.innerHTML = `<strong>${prize.tier}</strong><span>${prize.name}</span><em>${counts[prize.id]}</em>`;
+        els.remainingPrizes.appendChild(row);
+      });
+
+      if (!els.remainingPrizes.children.length) {
+        els.remainingPrizes.innerHTML = "<p class=\"muted\">本套已全部抽完。</p>";
+      }
+    }
+
+    function renderHistory() {
+      const drawnTickets = state.deck.filter((ticket) => ticket.drawn).sort((a, b) => new Date(b.drawnAt) - new Date(a.drawnAt));
+      if (!drawnTickets.length) {
+        els.history.innerHTML = "<p class=\"muted\">目前尚無抽獎紀錄。</p>";
+        return;
+      }
+      els.history.innerHTML = "";
+      drawnTickets.forEach((ticket) => {
+        const prize = byId[ticket.prizeId];
+        const row = document.createElement("div");
+        row.className = "history-row";
+        const time = new Date(ticket.drawnAt).toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" });
+        row.innerHTML = `<strong>${formatNo(ticket.no)}</strong><span>${prize.tier} ${prize.name}${ticket.lastOne ? " + Last One" : ""}</span><span>${ticket.redeemed ? "已兌換" : "未兌換"} · ${time}</span>`;
+        els.history.appendChild(row);
+      });
+    }
+
+    function selectTicket(no) {
+      const ticket = state.deck.find((item) => item.no === no);
+      if (!ticket || ticket.drawn) return;
+      pendingTicketNo = no;
+      currentResultNo = null;
+      showPending(no);
+      renderBoard();
+    }
+
+    function showPending(no) {
+      els.emptyState.classList.add("hidden");
+      els.resultState.classList.add("hidden");
+      els.pendingState.classList.remove("hidden");
+      els.pendingNo.textContent = formatNo(no);
+    }
+
+    function showEmpty() {
+      els.emptyState.classList.remove("hidden");
+      els.pendingState.classList.add("hidden");
+      els.resultState.classList.add("hidden");
+    }
+
+    function drawPending() {
+      if (!pendingTicketNo) return;
+      const ticket = state.deck.find((item) => item.no === pendingTicketNo);
+      if (!ticket || ticket.drawn) return;
+      const { remaining } = getCounts();
+      ticket.drawn = true;
+      ticket.drawnAt = new Date().toISOString();
+      ticket.lastOne = remaining === 1;
+      currentResultNo = ticket.no;
+      pendingTicketNo = null;
+      saveState();
+      showResult(ticket);
+      render();
+    }
+
+    function showResult(ticket) {
+      const prize = byId[ticket.prizeId];
+      els.emptyState.classList.add("hidden");
+      els.pendingState.classList.add("hidden");
+      els.resultState.classList.remove("hidden");
+      els.resultState.classList.toggle("hot", ticket.lastOne);
+      els.resultNo.textContent = formatNo(ticket.no);
+      els.resultTier.textContent = prize.tier;
+      els.resultName.textContent = prize.name;
+      els.resultValue.textContent = prize.value;
+      els.lastOneBonus.classList.toggle("hidden", !ticket.lastOne);
+      els.redeemButton.disabled = ticket.redeemed;
+      els.redeemButton.textContent = ticket.redeemed ? "已完成兌換" : "已兌換";
+    }
+
+    function redeemCurrent() {
+      if (!currentResultNo) return;
+      const ticket = state.deck.find((item) => item.no === currentResultNo);
+      if (!ticket || !ticket.drawn) return;
+      ticket.redeemed = true;
+      ticket.redeemedAt = new Date().toISOString();
+      saveState();
+      showResult(ticket);
+      render();
+    }
+
+    function exportData() {
+      const payload = JSON.stringify(state, null, 2);
+      const blob = new Blob([payload], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `asify-kuji-set-${state.setNo}-${new Date().toISOString().slice(0, 10)}.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function newSet() {
+      const confirmation = window.prompt("開新一套會清空目前畫面並重新洗 25 籤。請輸入 NEW 確認。");
+      if (confirmation !== "NEW") return;
+      state = defaultState((state.setNo || 1) + 1);
+      pendingTicketNo = null;
+      currentResultNo = null;
+      saveState();
+      showEmpty();
+      render();
+    }
+
+    els.pinForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (els.pinInput.value.trim() === ACCESS_PIN) {
+        localStorage.setItem(AUTH_KEY, "1");
+        els.pinError.classList.add("hidden");
+        showApp();
+      } else {
+        els.pinError.classList.remove("hidden");
+      }
+    });
+
+    els.cancelPending.addEventListener("click", () => {
+      pendingTicketNo = null;
+      showEmpty();
+      renderBoard();
+    });
+    els.confirmDraw.addEventListener("click", drawPending);
+    els.redeemButton.addEventListener("click", redeemCurrent);
+    els.exportButton.addEventListener("click", exportData);
+    els.newSetButton.addEventListener("click", newSet);
+    els.lockButton.addEventListener("click", () => {
+      localStorage.removeItem(AUTH_KEY);
+      showLock();
+    });
+
+    if (isAuthed()) {
+      showApp();
+    } else {
+      showLock();
+    }
+  </script>
+</body>
+</html>

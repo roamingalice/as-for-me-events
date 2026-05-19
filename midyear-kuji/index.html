@@ -265,10 +265,81 @@
     }
 
     .play-card p,
+    .kuji-demo-copy p,
     .prize-copy p,
     .info-card p,
     .rule-list li {
       color: var(--muted);
+    }
+
+    .kuji-demo {
+      display: grid;
+      grid-template-columns: minmax(310px, 0.86fr) minmax(0, 1.14fr);
+      gap: var(--space-2xl);
+      align-items: center;
+      margin-top: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, color-mix(in oklch, var(--brand), var(--paper) 88%), color-mix(in oklch, var(--gold), var(--paper) 86%));
+      padding: var(--space-2xl);
+    }
+
+    .pad-visual {
+      border: 10px solid color-mix(in oklch, var(--ink), var(--brand) 16%);
+      border-radius: 22px;
+      background: color-mix(in oklch, var(--paper), white 32%);
+      box-shadow: 0 22px 50px color-mix(in oklch, var(--ink), transparent 82%);
+      padding: var(--space-lg);
+    }
+
+    .pad-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .pad-top strong {
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    .pad-top span {
+      color: var(--brand);
+      font-size: 0.75rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .ticket-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-sm);
+    }
+
+    .ticket-grid span {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in oklch, var(--brand), var(--paper) 72%);
+      border-radius: 6px;
+      background: color-mix(in oklch, var(--brand), var(--paper) 86%);
+      color: var(--brand-deep);
+      font-size: clamp(0.74rem, 1.6vw, 1rem);
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .kuji-demo-copy {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .kuji-demo-copy h3 {
+      font-size: clamp(1.35rem, 2.3vw, 2.1rem);
+      line-height: 1.2;
     }
 
     .offer-band {
@@ -315,8 +386,10 @@
     }
 
     .offer strong {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 0.95;
+      display: block;
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      line-height: 1.08;
+      font-variant-numeric: tabular-nums;
     }
 
     .prize-grid {
@@ -428,7 +501,7 @@
         min-height: auto;
         background:
           linear-gradient(180deg, color-mix(in oklch, var(--paper), transparent 1%) 0%, color-mix(in oklch, var(--paper), transparent 5%) 46%, color-mix(in oklch, var(--ink), transparent 76%) 100%),
-          url("assets/kuji/web/hero-kuji.jpg") 58% center / cover no-repeat;
+          url("assets/kuji/web/hero-kuji.jpg") 72% center / cover no-repeat;
       }
 
       .hero-copy {
@@ -437,6 +510,7 @@
 
       .hero-strip,
       .play-grid,
+      .kuji-demo,
       .offer-band,
       .last-one,
       .info-grid,
@@ -548,6 +622,27 @@
         <div class="section-head">
           <h2>怎麼玩</h2>
           <p>活動期間到 ASify 敦化店即可參加。每一籤都有獎，現場抽中、現場依門市可提供的尺寸與顏色挑選。</p>
+        </div>
+
+        <div class="kuji-demo" aria-label="Pad 抽籤示意">
+          <div class="pad-visual">
+            <div class="pad-top">
+              <strong>請點選一格</strong>
+              <span>25 籤一組</span>
+            </div>
+            <div class="ticket-grid" aria-hidden="true">
+              <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span>
+              <span>06</span><span>07</span><span>08</span><span>09</span><span>10</span>
+              <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+              <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+              <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+            </div>
+          </div>
+          <div class="kuji-demo-copy">
+            <div class="eyebrow">門市現場抽賞</div>
+            <h3>不是拿紙籤，而是在 Pad 上點選 1 格</h3>
+            <p>結帳後由門市同事開啟抽賞畫面，你直接在 5x5 格子中選一格。點開後會顯示抽中的賞別，現場依獎項內容兌換。</p>
+          </div>
         </div>
 
         <div class="play-grid">

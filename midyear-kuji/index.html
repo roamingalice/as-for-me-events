@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASify 年中一番賞｜門市限定</title>
+  <meta name="description" content="ASify 年中一番賞 6/1-6/30 於敦化店登場。每抽必中，現場滿額可用優惠價加購抽籤，最後一籤加贈風衣任選。">
+  <style>
+    :root {
+      --ink: oklch(21% 0.025 286);
+      --muted: oklch(47% 0.026 286);
+      --paper: oklch(98.5% 0.008 72);
+      --milk: oklch(96% 0.014 72);
+      --line: oklch(86% 0.014 72);
+      --brand: oklch(42% 0.105 315);
+      --brand-deep: oklch(28% 0.08 315);
+      --rose: oklch(63% 0.13 12);
+      --leaf: oklch(48% 0.07 145);
+      --gold: oklch(72% 0.115 74);
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 24px;
+      --space-2xl: 32px;
+      --space-3xl: 48px;
+      --space-4xl: 64px;
+      --space-5xl: 96px;
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1,
+    h2 {
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 8.2ch;
+      font-size: clamp(3.4rem, 8vw, 7.4rem);
+      line-height: 0.95;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.6vw, 4.2rem);
+      line-height: 1.05;
+    }
+
+    h3 {
+      font-size: 1.02rem;
+      line-height: 1.35;
+    }
+
+    .hero {
+      min-height: 94svh;
+      display: grid;
+      align-items: end;
+      background:
+        linear-gradient(90deg, color-mix(in oklch, var(--paper), transparent 1%) 0%, color-mix(in oklch, var(--paper), transparent 4%) 34%, transparent 58%),
+        linear-gradient(0deg, color-mix(in oklch, var(--ink), transparent 74%), transparent 36%),
+        url("assets/kuji/web/hero-kuji.jpg") center / cover no-repeat;
+    }
+
+    .hero-inner,
+    .section-inner,
+    .nav-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 2;
+      padding: var(--space-xl) 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+
+    .logo {
+      width: clamp(120px, 17vw, 210px);
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      border: 1px solid color-mix(in oklch, var(--brand), var(--paper) 60%);
+      border-radius: var(--radius);
+      background: color-mix(in oklch, var(--paper), transparent 12%);
+      color: var(--brand-deep);
+      padding: 0 var(--space-lg);
+      font-size: 0.92rem;
+      font-weight: 850;
+    }
+
+    .hero-copy {
+      width: min(620px, 100%);
+      display: grid;
+      gap: var(--space-xl);
+      padding: 120px 0 var(--space-4xl);
+    }
+
+    .eyebrow {
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      max-width: 38rem;
+      color: color-mix(in oklch, var(--ink), var(--brand) 20%);
+      font-size: clamp(1.08rem, 2vw, 1.3rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      align-items: center;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      padding: 0 var(--space-xl);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      background: var(--brand-deep);
+      color: var(--paper);
+    }
+
+    .button.secondary {
+      border: 1px solid color-mix(in oklch, var(--brand), var(--paper) 55%);
+      background: color-mix(in oklch, var(--paper), transparent 8%);
+      color: var(--brand-deep);
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid color-mix(in oklch, var(--paper), transparent 68%);
+      background: color-mix(in oklch, var(--ink), transparent 16%);
+      color: var(--paper);
+    }
+
+    .hero-strip div {
+      min-height: 116px;
+      display: grid;
+      align-content: center;
+      gap: var(--space-xs);
+      padding: var(--space-xl);
+      border-right: 1px solid color-mix(in oklch, var(--paper), transparent 78%);
+    }
+
+    .hero-strip span {
+      color: color-mix(in oklch, var(--paper), var(--gold) 18%);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .hero-strip strong {
+      font-size: clamp(1.2rem, 2vw, 1.75rem);
+      line-height: 1.15;
+    }
+
+    .section {
+      padding: var(--space-5xl) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1fr);
+      gap: var(--space-3xl);
+      align-items: end;
+      margin-bottom: var(--space-3xl);
+    }
+
+    .section-head p {
+      max-width: 46rem;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .play-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .play-card,
+    .prize-card,
+    .info-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in oklch, var(--paper), white 28%);
+    }
+
+    .play-card {
+      display: grid;
+      gap: var(--space-lg);
+      padding: var(--space-xl);
+    }
+
+    .play-card .num {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: color-mix(in oklch, var(--brand), var(--paper) 78%);
+      color: var(--brand-deep);
+      font-weight: 950;
+    }
+
+    .play-card p,
+    .prize-copy p,
+    .info-card p,
+    .rule-list li {
+      color: var(--muted);
+    }
+
+    .offer-band {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--space-xl);
+      align-items: stretch;
+      margin-top: var(--space-xl);
+      background: var(--brand-deep);
+      color: var(--paper);
+    }
+
+    .offer-title {
+      display: grid;
+      align-content: center;
+      gap: var(--space-md);
+      padding: var(--space-2xl);
+    }
+
+    .offer-title p {
+      color: color-mix(in oklch, var(--paper), var(--gold) 12%);
+    }
+
+    .offer-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: color-mix(in oklch, var(--paper), transparent 82%);
+    }
+
+    .offer {
+      display: grid;
+      gap: var(--space-sm);
+      align-content: center;
+      min-height: 190px;
+      padding: var(--space-2xl);
+      background: color-mix(in oklch, var(--brand-deep), var(--ink) 22%);
+    }
+
+    .offer span {
+      color: color-mix(in oklch, var(--paper), var(--gold) 22%);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .offer strong {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 0.95;
+    }
+
+    .prize-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .prize-card {
+      overflow: hidden;
+    }
+
+    .prize-media {
+      aspect-ratio: 4 / 5;
+      background: var(--milk);
+      overflow: hidden;
+    }
+
+    .prize-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: var(--pos, center);
+    }
+
+    .prize-copy {
+      display: grid;
+      gap: var(--space-sm);
+      padding: var(--space-lg);
+    }
+
+    .prize-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-sm);
+      color: var(--brand);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .last-one {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+      background: color-mix(in oklch, var(--gold), var(--paper) 78%);
+    }
+
+    .last-one img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .last-copy {
+      display: grid;
+      gap: var(--space-xl);
+      padding: var(--space-3xl);
+    }
+
+    .last-copy p {
+      color: color-mix(in oklch, var(--ink), var(--brand) 18%);
+      font-size: 1.08rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--space-lg);
+    }
+
+    .info-card {
+      padding: var(--space-xl);
+    }
+
+    .info-card strong {
+      display: block;
+      margin-bottom: var(--space-sm);
+      font-size: 1.05rem;
+    }
+
+    .rule-list {
+      display: grid;
+      gap: var(--space-md);
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .map-link {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: var(--space-lg);
+      border-bottom: 1px solid currentColor;
+      color: var(--brand);
+      font-weight: 900;
+    }
+
+    footer {
+      padding: var(--space-3xl) 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 940px) {
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, color-mix(in oklch, var(--paper), transparent 1%) 0%, color-mix(in oklch, var(--paper), transparent 5%) 46%, color-mix(in oklch, var(--ink), transparent 76%) 100%),
+          url("assets/kuji/web/hero-kuji.jpg") 58% center / cover no-repeat;
+      }
+
+      .hero-copy {
+        padding-top: 36svh;
+      }
+
+      .hero-strip,
+      .play-grid,
+      .offer-band,
+      .last-one,
+      .info-grid,
+      .section-head {
+        grid-template-columns: 1fr;
+      }
+
+      .prize-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        padding-top: var(--space-lg);
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      .hero-inner,
+      .section-inner,
+      .nav-inner {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero-copy {
+        padding-top: 34svh;
+        padding-bottom: var(--space-3xl);
+      }
+
+      .hero-actions,
+      .offer-list,
+      .prize-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .hero-strip {
+        display: grid;
+      }
+
+      .hero-strip div {
+        min-height: auto;
+        padding: var(--space-lg);
+        border-right: 0;
+        border-bottom: 1px solid color-mix(in oklch, var(--paper), transparent 78%);
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .section {
+        padding: var(--space-4xl) 0;
+      }
+
+      .last-one img {
+        min-height: 360px;
+      }
+
+      .last-copy {
+        padding: var(--space-xl);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="主要導覽">
+      <div class="nav-inner">
+        <img class="logo" src="assets/kuji/web/asify-logo-horizontal.png" alt="ASify">
+        <a class="nav-link" href="#store">查看門市資訊</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">6/1 - 6/30｜ASify 敦化店限定</div>
+        <h1>年中一番賞</h1>
+        <p class="lead">每抽必中，25 籤一組。從褲子、Bratop、五分褲到配件組都有機會抽中，最後一籤再加贈風衣任選。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#how">看抽賞方式</a>
+          <a class="button secondary" href="#prizes">看全部獎項</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-strip" aria-label="活動重點">
+      <div>
+        <span>單抽價格</span>
+        <strong>NT$1,500</strong>
+      </div>
+      <div>
+        <span>門市滿額加購</span>
+        <strong>最低 NT$1,000</strong>
+      </div>
+      <div>
+        <span>Last One</span>
+        <strong>最後一籤加贈風衣</strong>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="how">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>怎麼玩</h2>
+          <p>活動期間到 ASify 敦化店即可參加。每一籤都有獎，現場抽中、現場依門市可提供的尺寸與顏色挑選。</p>
+        </div>
+
+        <div class="play-grid">
+          <article class="play-card">
+            <div class="num">1</div>
+            <h3>選擇抽一籤</h3>
+            <p>每籤 NT$1,500。門市會以 Pad 畫面讓你選一格，點開後直接公布獎項。</p>
+          </article>
+          <article class="play-card">
+            <div class="num">2</div>
+            <h3>抽中後現場兌換</h3>
+            <p>服飾類獎項可依現場尺寸、顏色與庫存挑選；配件組則依該賞內容混搭。</p>
+          </article>
+          <article class="play-card">
+            <div class="num">3</div>
+            <h3>最後一籤再加碼</h3>
+            <p>如果你抽到整組 25 籤中的最後一籤，會得到原本獎項，並加贈 Last One 風衣任選。</p>
+          </article>
+        </div>
+
+        <div class="offer-band" aria-label="滿額加購優惠">
+          <div class="offer-title">
+            <div class="eyebrow">門市購物加購更划算</div>
+            <h2>現場消費滿額，可用優惠價加購抽籤</h2>
+            <p>想補貨、試穿新品或剛好有想買的款式，可以把抽賞一起安排進門市結帳。</p>
+          </div>
+          <div class="offer-list">
+            <div class="offer">
+              <span>消費滿 NT$3,500</span>
+              <strong>NT$1,200</strong>
+              <p>可加購一籤</p>
+            </div>
+            <div class="offer">
+              <span>消費滿 NT$5,000</span>
+              <strong>NT$1,000</strong>
+              <p>可加購一籤</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prizes">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>25 籤獎項</h2>
+          <p>每組共 25 籤，每籤都有獎。下方為獎項內容，實際可選款式以 ASify 敦化店現場庫存為準。</p>
+        </div>
+
+        <div class="prize-grid">
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/pants-high-01.jpg" alt="褲子任選" style="--pos:center top"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>A 賞</span><span>1 籤</span></div>
+              <h3>NT$2,400-2,800 褲子任選</h3>
+              <p>門市現貨褲款任選一件。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/pants-mid-01.jpg" alt="褲子任選" style="--pos:center top"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>B 賞</span><span>1 籤</span></div>
+              <h3>NT$2,200-2,400 褲子任選</h3>
+              <p>門市現貨褲款任選一件。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/bratop-victoria-01.jpg" alt="Victoria 或 Iris Bratop" style="--pos:center"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>C 賞</span><span>2 籤</span></div>
+              <h3>Victoria / Iris Bratop 任選 1 件</h3>
+              <p>價值 NT$1,800。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/bratop-hebe-01.jpg" alt="Hebe 或 Grace Bratop" style="--pos:center"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>D 賞</span><span>2 籤</span></div>
+              <h3>Hebe / Grace Bratop 任選 1 件</h3>
+              <p>價值 NT$2,000。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/shorts-01.jpeg" alt="五分褲" style="--pos:center top"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>E 賞</span><span>3 籤</span></div>
+              <h3>五分褲任選 + 襪子 1 雙</h3>
+              <p>價值約 NT$2,300。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/tank01.jpeg" alt="背心" style="--pos:center"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>F 賞</span><span>4 籤</span></div>
+              <h3>背心任選 + 無痕內褲 1 件</h3>
+              <p>價值約 NT$2,100。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/top-01.jpeg" alt="上衣" style="--pos:center top"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>G 賞</span><span>4 籤</span></div>
+              <h3>上衣任選 + 無痕內褲 1 件</h3>
+              <p>價值約 NT$2,100。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/hairband-01.jpeg" alt="髮帶與配件" style="--pos:center"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>H 賞</span><span>4 籤</span></div>
+              <h3>襪子、無痕內褲、髮帶四件混搭組</h3>
+              <p>配件單品價值皆為 NT$500。</p>
+            </div>
+          </article>
+          <article class="prize-card">
+            <div class="prize-media"><img src="assets/kuji/web/canvas-tote-01.jpeg" alt="品牌帆布袋" style="--pos:center"></div>
+            <div class="prize-copy">
+              <div class="prize-meta"><span>I 賞</span><span>4 籤</span></div>
+              <h3>品牌帆布袋 + 配件任選 2 件</h3>
+              <p>配件可選襪子、無痕內褲或髮帶。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="last-one" aria-labelledby="last-one-title">
+      <img src="assets/kuji/web/windbreaker-01.jpg" alt="ASify 風衣">
+      <div class="last-copy">
+        <div class="eyebrow">Last One Bonus</div>
+        <h2 id="last-one-title">抽到最後一籤，直接再加一件風衣</h2>
+        <p>每組 25 籤的最後一位客人，會拿到該籤原本抽中的獎項，並加贈價值 NT$3,000 的風衣任選。</p>
+        <a class="button primary" href="#store">到門市抽一籤</a>
+      </div>
+    </section>
+
+    <section class="section" id="store">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>活動門市</h2>
+          <p>本活動為 ASify 敦化店限定。歡迎到店試穿、挑尺寸，也可以直接詢問現場同事目前剩餘獎項。</p>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <strong>ASify 敦化店</strong>
+            <p>台北市大安區忠孝東路四段216巷8弄16號1樓</p>
+            <p>忠孝敦化捷運站 3 號出口</p>
+            <p>營業時間 12:30-8:30pm</p>
+            <a class="map-link" href="https://maps.app.goo.gl/5EoHbRPFcApY4G4Y9" target="_blank" rel="noopener">開啟 Google Map</a>
+          </article>
+
+          <article class="info-card">
+            <strong>活動規則</strong>
+            <ul class="rule-list">
+              <li>活動期間為 6/1-6/30，限 ASify 敦化店參加。</li>
+              <li>一番賞每籤 NT$1,500；現場消費滿 NT$3,500 可用 NT$1,200 加購一籤，滿 NT$5,000 可用 NT$1,000 加購一籤。</li>
+              <li>服飾獎項依門市現場尺寸、顏色與庫存挑選，不另行寄送、保留或調貨。</li>
+              <li>一番賞不可累計滿額贈、不併用折扣、不使用購物金，抽中後不得要求退換現金或重新抽籤。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>ASify Midyear Kuji 2026</footer>
+</body>
+</html>

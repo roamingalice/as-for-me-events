@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow">
+  <title>ASify 敦化店內限定優惠</title>
+  <style>
+    :root {
+      --brand: #7c5cbf;
+      --brand-soft: #f1ecfa;
+      --brand-deep: #4a3580;
+      --ink: #2a223a;
+      --muted: #6b6477;
+      --paper: #faf8f5;
+      --soft: #f3eee6;
+      --line: #e6e0d4;
+      --warm: #c87a4a;
+      --rose: #b85060;
+      --radius: 10px;
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 12px;
+      --space-lg: 16px;
+      --space-xl: 24px;
+      --space-2xl: 32px;
+      --space-3xl: 48px;
+      --space-4xl: 64px;
+    }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { margin: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+    .page {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: 0 var(--space-lg) var(--space-4xl);
+    }
+    img { max-width: 100%; display: block; }
+
+    .hero {
+      width: 100%;
+      margin: 0 calc(50% - 50vw);
+      position: relative;
+    }
+    .hero img {
+      width: 100vw;
+      max-width: none;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: var(--space-2xl) var(--space-lg);
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,0.55));
+      color: #fff;
+    }
+    .hero-overlay .eyebrow {
+      color: #f1ecfa;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      margin: 0 0 var(--space-sm);
+    }
+    .hero-month {
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      color: var(--brand-deep);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      margin-top: var(--space-md);
+    }
+
+    /* Price strikethrough */
+    .strike-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+      margin-top: var(--space-xs);
+      flex-wrap: wrap;
+    }
+    .strike-row .strike {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .strike-row .pct {
+      background: var(--rose);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .hero-overlay h1 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.35);
+    }
+    .hero-overlay p {
+      margin: var(--space-sm) 0 0;
+      font-size: 0.95rem;
+      opacity: 0.92;
+    }
+
+    .badge-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      padding: var(--space-md) var(--space-lg);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 2px 12px rgba(124,92,191,0.25);
+    }
+
+    .intro {
+      margin-top: var(--space-2xl);
+      padding: var(--space-xl) var(--space-2xl);
+      background: var(--brand-soft);
+      border-radius: var(--radius);
+    }
+    .intro p {
+      color: var(--brand-deep);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    section {
+      margin-top: var(--space-3xl);
+    }
+    .lead {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.8;
+      margin: 0 0 var(--space-xl);
+      max-width: 60ch;
+    }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-md);
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-md);
+      border-bottom: 2px solid var(--brand-soft);
+    }
+    .section-head .eyebrow {
+      color: var(--brand);
+      font-size: 0.74rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+      margin: 0;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    p { margin: 0; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+
+    /* Highlight card: 出示本頁特惠 */
+    .highlight {
+      background: linear-gradient(135deg, var(--brand-soft), #fff);
+      border: 2px solid var(--brand);
+      border-radius: var(--radius);
+      padding: var(--space-xl);
+      box-shadow: 0 8px 24px rgba(124,92,191,0.12);
+    }
+    .highlight-tag {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: var(--space-md);
+    }
+    .highlight h3 {
+      font-size: 1.2rem;
+      margin-bottom: var(--space-md);
+    }
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: minmax(140px, 0.9fr) 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    .highlight-grid img {
+      border-radius: var(--radius);
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: var(--soft);
+    }
+    .highlight-price {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+    }
+    .highlight-price .price {
+      font-family: Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--brand-deep);
+      line-height: 1;
+    }
+    .highlight-price .unit {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .highlight-note {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px dashed var(--brand);
+      color: var(--brand-deep);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    /* Combo cards */
+    .cards {
+      display: grid;
+      gap: var(--space-xl);
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(120px, 0.8fr) 1fr;
+      gap: var(--space-lg);
+      padding: var(--space-lg);
+    }
+    .card img {
+      border-radius: 6px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: var(--soft);
+    }
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-sm);
+    }
+    .card-body h3 {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+      margin-top: var(--space-xs);
+    }
+    .price-row .price {
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--brand-deep);
+      line-height: 1;
+    }
+    .price-row .unit {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* 零碼 special */
+    .clearance-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--space-lg);
+      display: grid;
+      grid-template-columns: minmax(110px, 0.7fr) 1fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    .clearance-card img {
+      border-radius: 6px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: var(--soft);
+    }
+    .clearance-label {
+      display: inline-block;
+      background: var(--warm);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: var(--space-xs);
+    }
+    .clearance-card h3 {
+      font-size: 0.98rem;
+      margin-bottom: var(--space-xs);
+    }
+    .clearance-card .half {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--warm);
+      margin-top: var(--space-sm);
+    }
+    .clearance-card .note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: var(--space-xs);
+    }
+
+    /* 常態優惠 */
+    .everyday {
+      background: var(--soft);
+      border-radius: var(--radius);
+      padding: var(--space-xl);
+    }
+    .tier-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin: var(--space-md) 0 var(--space-xl);
+    }
+    .tier {
+      background: #fff;
+      border-radius: 8px;
+      padding: var(--space-md);
+      text-align: center;
+      border: 1px solid var(--line);
+    }
+    .tier .qty {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .tier .pct {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand);
+    }
+    .everyday ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .everyday li {
+      padding-left: 1.4em;
+      position: relative;
+      font-size: 0.95rem;
+    }
+    .everyday li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4em;
+      top: -0.1em;
+      color: var(--brand);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    /* Kuji callout */
+    .kuji {
+      display: block;
+      background: linear-gradient(135deg, #fff, var(--brand-soft));
+      border: 1px solid var(--brand);
+      border-radius: var(--radius);
+      padding: var(--space-xl);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    .kuji:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(124,92,191,0.18);
+    }
+    .kuji-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-md);
+      margin-bottom: var(--space-sm);
+    }
+    .kuji-tag {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .kuji h3 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--brand-deep);
+      margin-bottom: var(--space-xs);
+    }
+    .kuji p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+    .kuji-cta {
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    /* Store info */
+    .store {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--space-xl);
+    }
+    .store h3 {
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: 1.3rem;
+      margin-bottom: var(--space-md);
+    }
+    .store dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: var(--space-sm) var(--space-lg);
+      margin: var(--space-md) 0 var(--space-lg);
+    }
+    .store dt {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .store dd {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .map-link:hover {
+      background: var(--brand-deep);
+    }
+
+    footer {
+      margin-top: var(--space-3xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer .expiry {
+      color: var(--brand-deep);
+      font-weight: 700;
+      margin-bottom: var(--space-xs);
+    }
+
+    @media (max-width: 480px) {
+      .card, .clearance-card {
+        grid-template-columns: 1fr;
+      }
+      .card img, .clearance-card img {
+        max-width: 200px;
+        margin: 0 auto;
+      }
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+      .highlight-grid img {
+        max-width: 220px;
+        margin: 0 auto;
+      }
+      .tier-row {
+        gap: var(--space-sm);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="https://i.ibb.co/PG56c4Lq/IMG-7957.jpg" alt="ASify 敦化店">
+    <div class="hero-overlay">
+      <p class="eyebrow">ASIFY DUNHUA STORE</p>
+      <h1>敦化店內限定優惠</h1>
+      <p>給您的專屬優惠</p>
+      <span class="hero-month">2026 年 6 月限定</span>
+    </div>
+  </header>
+
+  <div class="badge-bar">到店結帳時請出示本頁面</div>
+
+  <main class="page">
+
+    <div class="intro">
+      <p>這一頁是 ASify 敦化店為您整理的專屬優惠——從天天都有的折扣，到敦化店限定的組合與零碼商品都在這裡。六月到店時出示這個頁面，結帳就能享有對應的優惠。</p>
+    </div>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Show This Page</span>
+      </div>
+      <h2 style="margin-bottom: var(--space-sm);">出示本頁特惠</h2>
+      <p class="lead">這一款是看到這頁的您專屬的價格，六月到店結帳時出示頁面，就可以用優惠價帶走。</p>
+
+      <div class="highlight">
+        <span class="highlight-tag">限出示本頁享有</span>
+        <h3>口袋款九分褲 桃紅</h3>
+        <div class="highlight-grid">
+          <img src="https://shoplineimg.com/5a5dde0872fdc02617000ee6/647974088bc2f30022ae4ad3/2960x.webp?source_format=jpg" alt="口袋款九分褲 桃紅">
+          <div>
+            <div class="highlight-price">
+              <span class="price">$720</span>
+              <span class="unit">/ 件</span>
+            </div>
+            <div class="strike-row">
+              <span class="strike">原價 $2,400</span>
+              <span class="pct">約 3 折</span>
+            </div>
+            <p class="muted" style="margin-top: var(--space-sm);">敦化店現場結帳時出示此頁面即享優惠價</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Limited Combo</span>
+      </div>
+      <h2 style="margin-bottom: var(--space-sm);">敦化店限定組合</h2>
+      <p class="lead">褲子加上 Bra 一次搭好，這些組合搭配只有敦化店有。</p>
+
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://shoplineimg.com/5a5dde0872fdc02617000ee6/674e96e7eca74a000c89002c/2960x.webp?source_format=png" alt="無縫九分褲 波爾多紅 + 自由呼吸 Bra 波爾多紅">
+          <div class="card-body">
+            <h3>無縫九分褲 波爾多紅<br>＋ 自由呼吸 Bra 波爾多紅</h3>
+            <div class="price-row">
+              <span class="price">$2,369</span>
+              <span class="unit">/ 一套</span>
+            </div>
+            <div class="strike-row">
+              <span class="strike">原價 $3,950</span>
+              <span class="pct">約 6 折</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://shoplineimg.com/5a5dde0872fdc02617000ee6/669744e594469f0010e720a3/2960x.webp?source_format=jpg" alt="無縫小9分 或 無縫十分褲 大地灰 + 自由呼吸 Bra 海霧紫">
+          <div class="card-body">
+            <h3>無縫小9分 或 無縫十分褲 大地灰<br>＋ 自由呼吸 Bra 海霧紫</h3>
+            <div class="price-row">
+              <span class="price">$2,369</span>
+              <span class="unit">/ 一套</span>
+            </div>
+            <div class="strike-row">
+              <span class="strike">原價 $3,950</span>
+              <span class="pct">約 6 折</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="https://shoplineimg.com/5a5dde0872fdc02617000ee6/638ec0e35611ac00136c88ee/2960x.webp?source_format=jpg" alt="無縫九分褲 薄荷綠 + Iris Bra 薄荷綠 或 Hebe 米白">
+          <div class="card-body">
+            <h3>無縫九分褲 薄荷綠<br>＋ Iris Bra 薄荷綠 或 Hebe 米白</h3>
+            <div class="price-row">
+              <span class="price">$2,469</span>
+              <span class="unit">/ 一套</span>
+            </div>
+            <div class="strike-row">
+              <span class="strike">原價 $4,100~$4,300</span>
+              <span class="pct">約 6 折</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Half Price</span>
+      </div>
+      <h2 style="margin-bottom: var(--space-sm);">敦化店限定零碼半價</h2>
+      <p class="lead">這兩款零碼尺寸半價，數量有限、賣完就沒有了。</p>
+
+      <div class="cards">
+
+        <div class="clearance-card">
+          <img src="https://shoplineimg.com/5a5dde0872fdc02617000ee6/6664111accd0f0001fe17f16/2960x.webp?source_format=png" alt="十分褲珊瑚粉">
+          <div>
+            <span class="clearance-label">半價</span>
+            <h3>十分褲 珊瑚粉</h3>
+            <p class="note">尺寸 2 號、4 號</p>
+          </div>
+        </div>
+
+        <div class="clearance-card">
+          <img src="https://i.ibb.co/gxnmW2S/202301311414-1.jpg" alt="Thild 削肩背心白色">
+          <div>
+            <span class="clearance-label">半價</span>
+            <h3>Thild 削肩背心 白色</h3>
+            <p class="note">尺寸 S（圖片為黃色僅供參考）</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Everyday Offer</span>
+      </div>
+      <h2 style="margin-bottom: var(--space-sm);">店內常態優惠</h2>
+      <p class="lead">就算沒遇上限定檔期，敦化店天天都有這些優惠等您。</p>
+
+      <div class="everyday">
+        <p style="font-weight: 700; margin-bottom: var(--space-sm);">任選</p>
+        <div class="tier-row">
+          <div class="tier">
+            <div class="qty">1 件</div>
+            <div class="pct">95 折</div>
+          </div>
+          <div class="tier">
+            <div class="qty">2 件</div>
+            <div class="pct">9 折</div>
+          </div>
+          <div class="tier">
+            <div class="qty">3 件</div>
+            <div class="pct">88 折</div>
+          </div>
+        </div>
+
+        <p style="font-weight: 700; margin-bottom: var(--space-sm);">新朋友加入會員</p>
+        <ul>
+          <li>享 100 元購物金</li>
+          <li>滿額再贈送商品</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Now On</span>
+      </div>
+      <h2 style="margin-bottom: var(--space-sm);">敦化店進行中活動</h2>
+      <p class="lead">六月到店時，別忘了還有正在進行的活動。</p>
+
+      <a class="kuji" href="https://event.as-for-me.com/midyear-kuji/" target="_blank" rel="noopener">
+        <div class="kuji-head">
+          <span class="kuji-tag">6/1 – 6/30 限定</span>
+          <span class="kuji-cta">看活動 →</span>
+        </div>
+        <h3>ASify 年中一番賞</h3>
+        <p>敦化店現場滿額即可優惠價加購抽籤，每抽必中，最後一籤加贈風衣任選。</p>
+      </a>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow">Visit Us</span>
+      </div>
+      <h2 style="margin-bottom: var(--space-sm);">ASify 敦化店</h2>
+      <p class="lead">下次想再來、或想揪朋友一起逛，這是我們的位置。</p>
+
+      <div class="store">
+        <h3>歡迎到店試穿選購</h3>
+        <dl>
+          <dt>地址</dt>
+          <dd>台北市大安區忠孝東路四段 216 巷 8 弄 16 號 1 樓</dd>
+          <dt>交通</dt>
+          <dd>忠孝敦化捷運站 3 號出口<br>明曜百貨 Uniqlo 後面第一條巷子</dd>
+          <dt>營業</dt>
+          <dd>每日 12:30 - 20:30</dd>
+        </dl>
+        <a class="map-link" href="https://maps.app.goo.gl/5EoHbRPFcApY4G4Y9" target="_blank" rel="noopener">
+          開啟 Google Maps 導航 →
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p style="margin-bottom: var(--space-md);">期待在敦化店與您相見。</p>
+      <p class="expiry">本頁優惠即日起至 2026 年 6 月 30 日</p>
+      <p>ASify 敦化店內限定 · 結帳時請出示本頁</p>
+    </footer>
+
+  </main>
+</body>
+</html>

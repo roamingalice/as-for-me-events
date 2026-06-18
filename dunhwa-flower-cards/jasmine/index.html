@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>妳抽到茉莉｜ASify 敦化店七月花卡</title>
+  <meta name="description" content="ASify 敦化店七月花卡。妳抽到茉莉：妳可以很溫柔，也可以很清楚。清爽不是疏離，是讓自己有空間呼吸。">
+  <link rel="canonical" href="https://event.as-for-me.com/dunhwa-flower-cards/jasmine/">
+  <meta property="og:title" content="妳抽到茉莉｜ASify 敦化店七月花卡">
+  <meta property="og:description" content="妳抽到的是一朵看起來安靜、靠近時卻很有存在感的花。">
+  <style>
+:root {
+  --ink: #302733;
+  --muted: #746a70;
+  --paper: #fffaf4;
+  --cream: #fffdf8;
+  --petal: #6975ac;
+  --petal-deep: #4f5085;
+  --sky: #c9dfdd;
+  --leaf: #526b4e;
+  --leaf-dark: #324531;
+  --gold: #c99a4c;
+  --line: rgba(82, 107, 78, .18);
+  --shadow: 0 22px 60px rgba(48, 39, 51, .14);
+  --radius: 8px;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.72;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+.page {
+  min-height: 100svh;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 248, .3), rgba(255, 250, 244, 1) 82%),
+    radial-gradient(circle at 16% 10%, color-mix(in srgb, var(--sky) 70%, transparent), transparent 34%),
+    radial-gradient(circle at 86% 2%, rgba(236, 219, 182, .7), transparent 28%),
+    var(--paper);
+}
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  isolation: isolate;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 244, .15), rgba(255, 250, 244, .94) 78%),
+    radial-gradient(circle at 50% 28%, rgba(255, 255, 255, .84), transparent 28%);
+  z-index: -1;
+}
+.brand {
+  position: absolute;
+  top: max(18px, env(safe-area-inset-top));
+  left: clamp(18px, 5vw, 44px);
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  width: 96px;
+  height: 42px;
+}
+.brand img { display: block; width: 100%; height: auto; }
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: grid;
+  place-items: center;
+  padding: 46px 0 0;
+}
+.flower-scene {
+  width: min(100vw, 680px);
+  height: min(88svh, 760px);
+  min-height: 560px;
+  display: block;
+  filter: drop-shadow(0 28px 42px rgba(50, 69, 49, .18));
+}
+.hero-copy {
+  align-self: end;
+  width: min(100%, 760px);
+  padding: 0 clamp(18px, 5vw, 52px) max(34px, calc(24px + env(safe-area-inset-bottom)));
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+  border: 1px solid rgba(82, 107, 78, .22);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, .78);
+  color: var(--leaf-dark);
+  font-size: 13px;
+  font-weight: 800;
+  backdrop-filter: blur(10px);
+}
+h1 {
+  margin: 0;
+  font-family: Georgia, "Noto Serif TC", serif;
+  font-size: clamp(43px, 12vw, 88px);
+  line-height: .98;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.lead {
+  margin: 20px 0 0;
+  max-width: 620px;
+  color: #4f454d;
+  font-size: clamp(18px, 4.5vw, 23px);
+  line-height: 1.78;
+  font-weight: 500;
+}
+.scroll-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 26px;
+  color: var(--leaf-dark);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+}
+.scroll-cue span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(82, 107, 78, .28);
+  background: rgba(255, 253, 248, .7);
+}
+section { padding: clamp(34px, 9vw, 84px) clamp(18px, 5vw, 56px); }
+.inner { width: min(920px, 100%); margin: 0 auto; }
+.section-kicker {
+  margin: 0 0 9px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+h2 {
+  margin: 0;
+  font-family: Georgia, "Noto Serif TC", serif;
+  font-size: clamp(29px, 7vw, 52px);
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+.poem { background: var(--cream); }
+.poem-card {
+  padding: clamp(28px, 7vw, 54px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, .86);
+  box-shadow: var(--shadow);
+}
+.poem-text {
+  margin: 24px 0 0;
+  color: #4d4249;
+  font-family: Georgia, "Noto Serif TC", serif;
+  font-size: clamp(23px, 5.4vw, 38px);
+  line-height: 1.64;
+  letter-spacing: 0;
+}
+.story { background: linear-gradient(180deg, var(--cream), color-mix(in srgb, var(--sky) 34%, #fffdf8)); }
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  gap: clamp(22px, 5vw, 46px);
+  align-items: start;
+}
+.story-copy p {
+  margin: 0 0 1.12em;
+  color: #50474e;
+  font-size: clamp(17px, 3.8vw, 20px);
+}
+.quiet-panel {
+  border-left: 3px solid var(--petal);
+  padding: 19px 20px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: rgba(255, 253, 248, .72);
+  color: var(--petal-deep);
+  font-size: 17px;
+  font-weight: 700;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.chips li {
+  padding: 9px 12px;
+  border: 1px solid rgba(82, 107, 78, .2);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, .78);
+  color: var(--leaf-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+.gift { background: var(--leaf-dark); color: #fffdf8; }
+.gift-card {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(240px, .72fr);
+  gap: clamp(22px, 5vw, 42px);
+  align-items: center;
+  padding: clamp(26px, 7vw, 50px);
+  border: 1px solid rgba(255, 253, 248, .18);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(255, 253, 248, .12), transparent 54%), rgba(255, 253, 248, .05);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .18);
+}
+.gift h2, .gift .section-kicker { color: #fffdf8; }
+.gift-copy {
+  margin: 20px 0 0;
+  color: rgba(255, 253, 248, .84);
+  font-size: 18px;
+}
+.gift-badge {
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: #fffdf8;
+  color: var(--leaf-dark);
+  text-align: center;
+}
+.gift-badge strong {
+  display: block;
+  font-family: Georgia, "Noto Serif TC", serif;
+  font-size: clamp(32px, 7vw, 58px);
+  line-height: 1.12;
+  color: var(--petal-deep);
+  letter-spacing: 0;
+}
+.gift-badge small {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 700;
+}
+.rules { background: var(--paper); }
+.rule-list {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.rule-list li {
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 248, .76);
+  color: #514850;
+  font-size: 15px;
+}
+.store { padding-top: 0; }
+.store-card {
+  padding: 22px;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--sky) 36%, #fffdf8);
+  border: 1px solid var(--line);
+  color: #443b42;
+  font-size: 15px;
+}
+.store-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--leaf-dark);
+  font-size: 18px;
+}
+.footer {
+  padding: 24px 18px calc(28px + env(safe-area-inset-bottom));
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+}
+@media (max-width: 760px) {
+  .flower-scene {
+    width: 132vw;
+    height: 78svh;
+    min-height: 520px;
+    transform: translateX(4vw) translateY(-3svh);
+  }
+  .hero-copy { padding-bottom: max(30px, calc(20px + env(safe-area-inset-bottom))); }
+  .story-grid, .gift-card { grid-template-columns: 1fr; }
+  .gift-badge { min-height: 190px; }
+}
+@supports not (color: color-mix(in srgb, red, white)) {
+  .page { background: var(--paper); }
+  .story { background: var(--cream); }
+  .store-card { background: #edf4e8; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .flower-main { animation: openFlower 1200ms cubic-bezier(.2, .8, .2, 1) both; transform-origin: 52% 34%; }
+  .vine { animation: growIn 1200ms ease-out both; transform-origin: 50% 100%; }
+  @keyframes openFlower {
+    from { opacity: 0; transform: scale(.92) rotate(-2deg); }
+    to { opacity: 1; transform: scale(1) rotate(0); }
+  }
+  @keyframes growIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+</style>
+</head>
+<body>
+  <main class="page" style="--petal:#f7f2dc;--petal-deep:#a58b42;--sky:#dfeee8;--leaf:#5f7a63;--leaf-dark:#344d3d;--gold:#c7a45b;">
+    <header class="hero">
+      <a class="brand" href="../" aria-label="ASify 七月敦化店花卡活動">
+        <img src="../assets/asify-logo-horizontal-purple.png" alt="ASify">
+      </a>
+      <div class="hero-art" aria-hidden="true">
+        <svg class="flower-scene" viewBox="0 0 640 760" role="img">
+          <defs>
+            <radialGradient id="petalGrad" cx="52%" cy="38%" r="62%">
+              <stop offset="0%" stop-color="#fffdf8"/>
+              <stop offset="42%" stop-color="var(--petal)"/>
+              <stop offset="100%" stop-color="var(--petal-deep)"/>
+            </radialGradient>
+            <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="color-mix(in srgb, var(--leaf) 62%, #fffdf8)"/>
+              <stop offset="100%" stop-color="var(--leaf)"/>
+            </linearGradient>
+          </defs>
+          <path class="vine" d="M330 740 C294 650 381 592 336 515 C291 438 181 482 156 398 C129 305 246 257 230 174" fill="none" stroke="var(--leaf)" stroke-width="10" stroke-linecap="round"/>
+<path class="vine" d="M313 625 C251 603 220 579 190 523" fill="none" stroke="var(--leaf)" stroke-width="5" stroke-linecap="round"/>
+<path class="vine" d="M331 543 C412 519 444 462 438 384" fill="none" stroke="var(--leaf)" stroke-width="5" stroke-linecap="round"/>
+<path d="M188 516 C138 491 127 446 164 417 C220 430 244 470 219 513 C209 520 199 522 188 516Z" fill="url(#leafGrad)" opacity=".9"/>
+<path d="M432 372 C493 360 535 390 533 439 C482 463 435 451 415 405 C417 391 423 381 432 372Z" fill="url(#leafGrad)" opacity=".82"/>
+<path d="M286 676 C236 651 226 604 263 576 C319 590 344 631 317 673 C307 680 296 682 286 676Z" fill="url(#leafGrad)" opacity=".78"/><g class="flower-main"><ellipse cx="320" cy="158" rx="58" ry="96" transform="rotate(0 320 158)" fill="url(#petalGrad)"/><ellipse cx="386" cy="210" rx="58" ry="96" transform="rotate(58 386 210)" fill="url(#petalGrad)"/><ellipse cx="364" cy="288" rx="58" ry="96" transform="rotate(132 364 288)" fill="url(#petalGrad)"/><ellipse cx="276" cy="288" rx="58" ry="96" transform="rotate(228 276 288)" fill="url(#petalGrad)"/><ellipse cx="254" cy="210" rx="58" ry="96" transform="rotate(302 254 210)" fill="url(#petalGrad)"/><circle cx="320" cy="230" r="34" fill="#f1c76e"/><circle cx="320" cy="230" r="14" fill="#a58b42"/></g><g opacity=".72"><circle cx="116" cy="229" r="7" fill="#fffdf8"/><circle cx="509" cy="153" r="5" fill="#fffdf8"/><circle cx="482" cy="552" r="6" fill="#fffdf8"/><circle cx="148" cy="650" r="4" fill="#fffdf8"/></g>
+        </svg>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">七月敦化店花卡｜妳抽到茉莉</p>
+        <h1>安靜靠近，也很有存在感</h1>
+        <p class="lead">妳抽到的是一朵看起來安靜、靠近時卻很有存在感的花。</p>
+        <a class="scroll-cue" href="#gift"><span>↓</span>看看今天這張卡帶來什麼</a>
+      </div>
+    </header>
+
+    <section class="poem" id="meaning">
+      <div class="inner">
+        <article class="poem-card">
+          <p class="section-kicker">FLOWER LANGUAGE</p>
+          <h2>茉莉的花語</h2>
+          <p class="poem-text">妳可以很溫柔，也可以很清楚。清爽不是疏離，是讓自己有空間呼吸。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="inner story-grid">
+        <div>
+          <p class="section-kicker">ASIFY STORY</p>
+          <h2>把夏天穿得清爽一點</h2>
+        </div>
+        <div class="story-copy">
+          <p>茉莉的感覺很乾淨，適合連到 ASify 夏天最需要的「不黏、不悶、流汗後也不要有負擔」。</p>
+          <p>如果妳怕熱、怕厚重，極薄布會是第一個可以試的方向；如果妳想要上半身也清爽，500 回眸美背上衣或好自由側綁背心也很適合一起看。</p>
+          <div class="quiet-panel">今天適合試試清爽、輕薄、讓身體有空間呼吸的搭配。</div>
+          <ul class="chips" aria-label="適合逛的品項">
+            <li>極薄布褲款</li>
+            <li>500 回眸美背上衣</li>
+            <li>好自由側綁背心</li>
+            <li>止滑襪</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="gift" id="gift">
+      <div class="inner gift-card">
+        <div>
+          <p class="section-kicker">TODAY'S CARD GIFT</p>
+          <h2>今日花卡禮物</h2>
+          <p class="gift-copy">抽到茉莉，今天在敦化店消費即送止滑襪。給皮拉提斯、伸展與日常練習，多一點踏實的安心感。</p>
+        </div>
+        <div class="gift-badge" aria-label="消費即送止滑襪">
+          <div>
+            <strong>消費即送<br>止滑襪</strong>
+            <small>請出示實體花卡與此頁面給店員確認</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules" id="rules">
+      <div class="inner">
+        <p class="section-kicker">CARD RULES</p>
+        <h2>使用規則</h2>
+        <ul class="rule-list">
+          <li>限 ASify 敦化店當日使用。</li>
+          <li>每次來店都可以抽一張花卡，不需消費。</li>
+          <li>限定正價商品，不可與其他優惠併用。</li>
+          <li>贈品數量有限，送完為止。</li>
+          <li>店員以現場抽到的實體花卡與手機頁面確認。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="store">
+      <div class="inner">
+        <div class="store-card">
+          <strong>ASify 敦化店</strong>
+          台北市大安區忠孝東路四段216巷8弄16號1樓<br>
+          捷運忠孝敦化站 3 號出口步行 1 分鐘<br>
+          營業時間：週一至週日 12:30-20:30
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">ASify 七月敦化店花卡活動｜本頁為茉莉卡專屬 QR 頁</footer>
+  </main>
+</body>
+</html>

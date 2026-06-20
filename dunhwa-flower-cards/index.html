@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>ASify 玫瑰花卡牆｜七月來敦化店抽一張</title>
-  <meta name="description" content="七月，ASify 玫瑰花卡牆即將移到敦化店。抽一張玫瑰花卡，掃 QR code，看見屬於妳的花語與藏在心裡的小渴望。">
-  <meta property="og:title" content="ASify 玫瑰花卡牆｜七月來敦化店抽一張">
-  <meta property="og:description" content="玫瑰看起來都一樣，但每個人抽到的那句話，都剛好反射到妳內心的一個角落。">
-  <meta property="og:image" content="https://i.ibb.co/Ld2k8ZBw/77975b7d625d.jpg">
+  <title>ASify 花卡牆來到敦化店｜七月結帳抽一張夏天的花</title>
+  <meta name="description" content="六月 MIRROR FUTURE VIP 活動上的 ASify 花卡牆，七月來到 ASify 敦化店。結帳時抽一張夏天花卡，掃 QR code，看見妳抽到的花語與當日驚喜。">
+  <link rel="canonical" href="https://event.as-for-me.com/dunhwa-flower-cards/">
+  <meta property="og:title" content="ASify 花卡牆來到敦化店｜七月結帳抽一張夏天的花">
+  <meta property="og:description" content="從六月 VIP 活動延伸而來的 ASify 花卡牆，七月來到敦化店。結帳時抽一張花卡，掃 QR code 看今天屬於妳的花語與驚喜。">
   <style>
     :root {
-      --ink: #302537;
-      --muted: #716878;
-      --paper: #fffaf7;
-      --soft: #f7eff1;
-      --soft-2: #f3ebe5;
-      --rose: #91536f;
-      --rose-dark: #563062;
-      --line: #eadfe4;
-      --cream: #fffdf9;
-      --shadow: 0 18px 48px rgba(68, 41, 64, .12);
-      --radius: 10px;
-      --space: clamp(20px, 5vw, 56px);
+      --ink: #302733;
+      --muted: #746a70;
+      --paper: #fffaf4;
+      --cream: #fffdf8;
+      --leaf: #526b4e;
+      --leaf-dark: #324531;
+      --violet: #5b548d;
+      --sun: #d99a33;
+      --coral: #d86955;
+      --sky: #cfe2df;
+      --line: rgba(82, 107, 78, .18);
+      --shadow: 0 22px 60px rgba(48, 39, 51, .14);
+      --radius: 8px;
+      --space: clamp(34px, 8vw, 86px);
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -31,112 +33,157 @@
       background: var(--paper);
       color: var(--ink);
       font-family: "Avenir Next", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      line-height: 1.7;
+      line-height: 1.72;
       letter-spacing: 0;
       overflow-x: hidden;
     }
-    img { display: block; max-width: 100%; }
     a { color: inherit; }
+    img { display: block; max-width: 100%; }
 
     .page {
+      min-height: 100svh;
       overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(207, 226, 223, .84), transparent 34%),
+        radial-gradient(circle at 90% 2%, rgba(247, 219, 156, .72), transparent 28%),
+        linear-gradient(180deg, #fffdf8 0%, #fffaf4 64%, #f1f6ee 100%);
     }
 
     .hero {
-      min-height: 92svh;
+      position: relative;
+      min-height: 94svh;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(360px, 46vw);
-      background: var(--cream);
+      grid-template-columns: minmax(0, .82fr) minmax(420px, .9fr);
+      gap: clamp(22px, 5vw, 64px);
+      align-items: center;
+      padding: max(24px, env(safe-area-inset-top)) clamp(18px, 6vw, 76px) 32px;
     }
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(36px, 8vw, 92px);
-      min-width: 0;
-    }
+
     .brand {
-      margin: 0 0 36px;
-      color: var(--rose-dark);
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: .01em;
+      display: inline-flex;
+      align-items: center;
+      width: 112px;
+      margin-bottom: clamp(28px, 7vw, 68px);
     }
+
+    .brand img {
+      width: 100%;
+      height: auto;
+    }
+
     .kicker {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
       margin: 0 0 16px;
-      color: var(--rose);
-      font-size: 14px;
+      padding: 6px 12px;
+      border: 1px solid rgba(82, 107, 78, .22);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .76);
+      color: var(--leaf-dark);
+      font-size: 13px;
       font-weight: 800;
-      letter-spacing: .16em;
+      backdrop-filter: blur(10px);
     }
+
     h1 {
       margin: 0;
-      max-width: 760px;
+      max-width: 840px;
       font-family: Georgia, "Noto Serif TC", serif;
-      font-size: clamp(42px, 8vw, 86px);
-      line-height: 1.06;
-      font-weight: 700;
+      font-size: clamp(46px, 9vw, 96px);
+      line-height: 1.02;
       letter-spacing: 0;
-      line-break: loose;
-      overflow-wrap: anywhere;
-      word-break: break-all;
+      font-weight: 700;
+      text-wrap: balance;
     }
-    .hero-lead {
+
+    .lead {
       margin: 24px 0 0;
-      max-width: 620px;
-      color: var(--muted);
-      font-size: clamp(17px, 2.2vw, 21px);
-      line-height: 1.85;
+      max-width: 660px;
+      color: #4f454d;
+      font-size: clamp(18px, 2.35vw, 23px);
+      line-height: 1.86;
+      font-weight: 500;
     }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
+
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 12px 22px;
+      min-height: 48px;
+      padding: 12px 20px;
       border-radius: 999px;
-      background: var(--rose-dark);
-      color: #fff;
+      background: var(--leaf-dark);
+      color: #fffdf8;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 900;
       line-height: 1.2;
     }
+
     .button.secondary {
-      background: transparent;
-      color: var(--rose-dark);
-      border: 1px solid rgba(86, 48, 98, .28);
+      background: rgba(255, 253, 248, .76);
+      color: var(--leaf-dark);
+      border: 1px solid rgba(82, 107, 78, .24);
     }
-    .hero-media {
-      min-height: 100%;
+
+    .hero-visual {
       position: relative;
-      background: #ede3dd;
-      min-width: 0;
+      min-height: 680px;
     }
-    .hero-media img {
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-photo img {
       width: 100%;
       height: 100%;
-      min-height: 92svh;
       object-fit: cover;
+      object-position: center center;
     }
-    .hero-note {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      max-width: 250px;
-      padding: 14px 16px;
-      border-radius: var(--radius);
-      background: rgba(255, 250, 247, .92);
-      color: var(--rose-dark);
-      font-size: 14px;
-      line-height: 1.65;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+
+    .story {
+      background: var(--cream);
+    }
+
+    .story-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      gap: clamp(24px, 6vw, 70px);
+      align-items: start;
+    }
+
+    .story-copy {
+      color: #4f454d;
+      font-size: clamp(18px, 2.3vw, 22px);
+      line-height: 1.9;
+    }
+
+    .story-copy p {
+      margin: 0 0 1.25em;
+    }
+
+    .quote-line {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-left: 3px solid var(--violet);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: rgba(255, 250, 244, .9);
+      color: var(--violet);
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(23px, 3.2vw, 34px);
+      line-height: 1.55;
     }
 
     .nav-strip {
@@ -145,385 +192,502 @@
       z-index: 20;
       display: flex;
       justify-content: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: rgba(255, 250, 247, .92);
+      gap: 8px;
+      padding: 10px 12px;
+      border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      background: rgba(255, 250, 244, .92);
       backdrop-filter: blur(12px);
+      overflow-x: auto;
     }
+
     .nav-strip a {
+      flex: 0 0 auto;
       padding: 7px 12px;
       border-radius: 999px;
-      color: var(--rose-dark);
+      color: var(--leaf-dark);
       text-decoration: none;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       white-space: nowrap;
     }
 
     section {
-      padding: var(--space) clamp(18px, 5vw, 72px);
+      padding: var(--space) clamp(18px, 6vw, 76px);
     }
+
     .inner {
-      width: min(1040px, 100%);
+      width: min(1120px, 100%);
       margin: 0 auto;
     }
+
     .section-head {
-      max-width: 760px;
-      margin-bottom: 30px;
+      max-width: 780px;
+      margin-bottom: 28px;
     }
-    .section-head p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 18px;
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--sun);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .16em;
     }
+
     h2 {
       margin: 0;
       font-family: Georgia, "Noto Serif TC", serif;
-      font-size: clamp(30px, 5vw, 52px);
+      font-size: clamp(32px, 5.5vw, 58px);
       line-height: 1.18;
+      letter-spacing: 0;
       font-weight: 700;
-      line-break: loose;
-      overflow-wrap: anywhere;
-      word-break: break-all;
+      text-wrap: balance;
     }
 
-    .story {
-      background: var(--soft);
-    }
-    .story-grid {
-      display: grid;
-      grid-template-columns: .92fr 1fr;
-      gap: clamp(24px, 5vw, 54px);
-      align-items: center;
-    }
-    .story-photo img {
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-    .story-copy {
-      font-size: 19px;
-      color: var(--ink);
-    }
-    .story-copy p {
-      margin: 0 0 1.2em;
-    }
-    .mirror-line {
-      margin-top: 22px;
-      padding: 22px 24px;
-      border-left: 3px solid var(--rose);
-      background: rgba(255, 255, 255, .7);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      color: var(--rose-dark);
-      font-size: 20px;
-      line-height: 1.85;
+    .section-head p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 18px;
     }
 
     .steps {
-      background: var(--paper);
+      background: var(--cream);
     }
+
     .step-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
     }
+
     .step {
-      min-height: 210px;
+      min-height: 224px;
       padding: 22px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: #fff;
+      background: rgba(255, 253, 248, .9);
+      box-shadow: 0 12px 30px rgba(48, 39, 51, .07);
     }
+
     .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-grid;
+      place-items: center;
       width: 34px;
       height: 34px;
       margin-bottom: 16px;
-      border-radius: 999px;
-      background: var(--rose-dark);
-      color: #fff;
-      font-weight: 800;
+      border-radius: 50%;
+      background: var(--leaf-dark);
+      color: #fffdf8;
+      font-weight: 900;
     }
-    .step h3 {
-      margin: 0 0 8px;
-      font-size: 19px;
-      line-height: 1.35;
-    }
-    .step p {
+
+    .step h3,
+    .reward-card h3,
+    .rule-card h3 {
       margin: 0;
+      font-size: 20px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .step p,
+    .reward-card p,
+    .rule-card p {
+      margin: 10px 0 0;
       color: var(--muted);
       font-size: 15px;
     }
 
-    .gallery {
-      background: #fff;
-    }
-    .photo-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 16px;
-    }
-    .photo-grid img {
-      width: 100%;
-      height: 100%;
-      min-height: 320px;
-      object-fit: cover;
-      border-radius: var(--radius);
-    }
-    .photo-stack {
-      display: grid;
-      gap: 16px;
-    }
-    .photo-stack img {
-      min-height: 152px;
+    .rewards {
+      background:
+        linear-gradient(180deg, rgba(255, 253, 248, .82), rgba(241, 246, 238, .92)),
+        var(--paper);
     }
 
-    .visit {
-      background: var(--soft-2);
-    }
-    .visit-card {
+    .reward-grid {
       display: grid;
-      grid-template-columns: 1fr .9fr;
-      gap: 28px;
-      padding: clamp(24px, 5vw, 44px);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: var(--shadow);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
     }
-    .visit-card h2 {
+
+    .reward-card {
+      min-height: 210px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, .84);
+      box-shadow: 0 12px 30px rgba(48, 39, 51, .06);
+    }
+
+    .reward-flower {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
       margin-bottom: 18px;
     }
-    .facts {
+
+    .reward-flower span {
+      color: var(--leaf-dark);
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .mini-flower {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 50%, #fffdf8 0 16%, transparent 17%),
+        conic-gradient(from 20deg, var(--c1), var(--c2), var(--c1), var(--c2), var(--c1));
+    }
+
+    .rules {
+      background: var(--leaf-dark);
+      color: #fffdf8;
+    }
+
+    .rules .section-kicker,
+    .rules h2 {
+      color: #fffdf8;
+    }
+
+    .rules .section-head p {
+      color: rgba(255, 253, 248, .78);
+    }
+
+    .rule-grid {
       display: grid;
-      gap: 12px;
-      margin-top: 22px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
     }
-    .fact {
-      padding: 14px 0;
-      border-top: 1px solid var(--line);
-    }
-    .fact strong {
-      display: block;
-      color: var(--rose-dark);
-      font-size: 14px;
-      letter-spacing: .08em;
-      margin-bottom: 3px;
-    }
-    .fact span {
-      color: var(--ink);
-      font-size: 16px;
-    }
-    .visit-aside {
+
+    .rule-card {
+      min-height: 160px;
+      padding: 20px;
+      border: 1px solid rgba(255, 253, 248, .18);
       border-radius: var(--radius);
-      background: var(--soft);
-      padding: 24px;
-    }
-    .visit-aside p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 17px;
+      background: rgba(255, 253, 248, .07);
     }
 
-    .fine-print {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
+    .rule-card p {
+      color: rgba(255, 253, 248, .78);
     }
 
-    footer {
-      padding: 28px 18px 42px;
+    .store {
+      background: var(--paper);
+    }
+
+    .store-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .8fr);
+      gap: clamp(18px, 5vw, 44px);
+      align-items: stretch;
+    }
+
+    .store-copy,
+    .store-box {
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, .84);
+      box-shadow: 0 12px 30px rgba(48, 39, 51, .06);
+    }
+
+    .store-copy p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .store-box dl {
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .store-box dt {
+      color: var(--leaf-dark);
+      font-weight: 900;
+    }
+
+    .store-box dd {
+      margin: 4px 0 0;
+      color: #50474e;
+    }
+
+    .store-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      margin-top: 20px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--leaf-dark);
+      color: #fffdf8;
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .footer {
+      padding: 28px 18px calc(32px + env(safe-area-inset-bottom));
       color: var(--muted);
       text-align: center;
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 980px) {
       .hero {
-        min-height: auto;
         grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: max(24px, env(safe-area-inset-top));
       }
-      .hero-copy {
-        padding: 30px 18px 34px;
+
+      .hero-visual {
+        min-height: 560px;
+        order: -1;
+        margin-top: 8px;
       }
+
       .brand {
-        margin-bottom: 28px;
+        margin-bottom: 24px;
       }
-      .hero-media img {
-        min-height: 520px;
-        aspect-ratio: 4 / 5;
-      }
-      .hero-note {
-        left: 14px;
-        right: 14px;
-        max-width: none;
-      }
-      .nav-strip {
-        justify-content: flex-start;
-        overflow-x: auto;
-      }
-      .story-grid,
-      .visit-card,
-      .photo-grid {
+
+      .step-grid,
+      .reward-grid,
+      .rule-grid,
+      .store-panel,
+      .story-layout {
         grid-template-columns: 1fr;
-      }
-      .step-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .photo-grid img,
-      .photo-stack img {
-        min-height: auto;
       }
     }
 
-    @media (max-width: 560px) {
-      h1 {
-        font-size: 38px;
+    @media (max-width: 620px) {
+      .hero {
+        padding-left: 18px;
+        padding-right: 18px;
       }
-      .hero-actions {
-        flex-direction: column;
+
+      .hero-visual {
+        min-height: 430px;
       }
+
       .button {
         width: 100%;
-      }
-      .step-grid {
-        grid-template-columns: 1fr;
-      }
-      .step {
-        min-height: auto;
-      }
-      .story-copy {
-        font-size: 17px;
-      }
-      .mirror-line {
-        font-size: 18px;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="hero" aria-label="ASify 玫瑰花卡牆活動預告">
+    <header class="hero" id="top">
       <div class="hero-copy">
-        <p class="brand">ASify</p>
-        <p class="kicker">COMING TO DUNHUA STORE</p>
-        <h1>七月，來敦化店<br>抽一張玫瑰花卡</h1>
-        <p class="hero-lead">玫瑰看起來都一樣，但每個人抽到的那句話，都剛好反射到妳內心的一個角落。那是妳的 mirror，也是妳自己的鏡。</p>
+        <a class="brand" href="https://www.as-for-me.com" aria-label="ASify 官網">
+          <img src="assets/asify-logo-horizontal-purple.png" alt="ASify">
+        </a>
+        <p class="kicker">ASify 敦化店限定｜2026 年 7 月</p>
+        <h1>那面花卡牆，七月來到敦化店</h1>
+        <p class="lead">六月 MIRROR FUTURE VIP 活動裡，大家在 ASify 花卡牆前停下來，抽一張玫瑰，讀一段剛好撞進心裡的話。七月，這個互動會在敦化店延續。結帳時抽一張夏天的花，掃 QR code，看見妳今天抽到的花語與當日驚喜。</p>
         <div class="hero-actions">
-          <a class="button" href="#visit">看敦化店資訊</a>
-          <a class="button secondary" href="#how">花卡怎麼玩</a>
+          <a class="button" href="#how">看活動玩法</a>
+          <a class="button secondary" href="#store">查看門市資訊</a>
         </div>
       </div>
-      <div class="hero-media">
-        <img src="https://i.ibb.co/Ld2k8ZBw/77975b7d625d.jpg" alt="ASify 玫瑰花卡牆與現場服飾展示">
-        <div class="hero-note">七月即將移到 ASify 敦化店。活動細節確認後，這個頁面會再更新。</div>
-      </div>
-    </section>
 
-    <nav class="nav-strip" aria-label="頁面導覽">
-      <a href="#story">花卡牆</a>
-      <a href="#how">玩法</a>
-      <a href="#gallery">現場照片</a>
-      <a href="#visit">敦化店</a>
+      <div class="hero-visual" aria-label="MIRROR FUTURE VIP 活動中的 ASify 花卡牆">
+        <div class="hero-photo">
+          <img src="assets/mirror-future-flower-wall-hero.jpg" alt="MIRROR FUTURE VIP 活動現場的 ASify 花卡牆與服飾展示">
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-strip" aria-label="活動頁導覽">
+      <a href="#story">花卡牆故事</a>
+      <a href="#how">怎麼抽</a>
+      <a href="#rewards">六種花卡</a>
+      <a href="#rules">活動規則</a>
+      <a href="#store">門市資訊</a>
     </nav>
 
-    <section id="story" class="story">
-      <div class="inner story-grid">
-        <figure class="story-photo">
-          <img src="https://i.ibb.co/HmFrvMF/f16a8966ae21.jpg" alt="來賓在 ASify 玫瑰花卡牆前互動">
-        </figure>
+    <section class="story" id="story">
+      <div class="inner story-layout">
+        <div class="section-head">
+          <p class="section-kicker">FROM MIRROR FUTURE</p>
+          <h2>有些話，要抽到才知道有沒有說中妳</h2>
+        </div>
         <div class="story-copy">
-          <div class="section-head">
-            <h2>一面會偷看妳心事的玫瑰花卡牆</h2>
-          </div>
-          <p>ASify 在 MIRROR FUTURE 鏡面未來 VIP 活動裡，準備了一面玫瑰花卡牆。</p>
-          <p>牆上放的都是玫瑰，但每一張花卡上的花語都不一樣。抽之前只是覺得漂亮，抽完之後就會開始對號入座。</p>
-          <p>「欸，這張也太像我了吧？」</p>
-          <p>「等一下，這是不是在偷看我的人生？」</p>
-          <div class="mirror-line">卡面上有一句花語，也有 QR code。掃進去之後，會看到更完整的解釋，還有一個藏在心裡的小渴望。</div>
+          <p>6 月的 MIRROR FUTURE VIP 活動現場，ASify 準備了一面玫瑰花卡牆。牆上放的都是玫瑰，但每張卡上的花語都不一樣。</p>
+          <p>那天，大家抽完會笑，會拍照，會交換看，也會很認真地讀完卡上的那段話。有人看完停了一下，有人讀完就轉身給身邊的人一個擁抱。</p>
+          <p>七月，花卡牆從 VIP 活動現場來到 ASify 敦化店。這次換成六朵夏天的花，等妳在結帳時抽一張。</p>
+          <div class="quote-line">也許妳只是來試一件褲子，最後會很想知道：今天是哪一朵花選到妳。</div>
         </div>
       </div>
     </section>
 
-    <section id="how" class="steps">
+    <section class="steps" id="how">
       <div class="inner">
         <div class="section-head">
-          <h2>七月來敦化店，這樣玩</h2>
-          <p>正式活動細節還在準備中，但妳可以先把這個小儀式放進七月行程。</p>
+          <p class="section-kicker">HOW TO PLAY</p>
+          <h2>逛完、試完，結帳時抽一張</h2>
+          <p>花卡牆會放在店裡，像一個小小的夏天入口。妳可以先看花、逛店、試穿；結帳時，再讓直覺替妳抽一張。</p>
         </div>
         <div class="step-grid">
           <article class="step">
-            <div class="step-num">1</div>
-            <h3>到敦化店</h3>
-            <p>來 ASify 敦化店，找到玫瑰花卡牆。</p>
+            <span class="step-num">1</span>
+            <h3>看見花卡牆</h3>
+            <p>七月整月，花卡牆會在敦化店等妳。</p>
           </article>
           <article class="step">
-            <div class="step-num">2</div>
-            <h3>抽一張玫瑰</h3>
-            <p>不用想太多，讓手先替妳選一張。</p>
+            <span class="step-num">2</span>
+            <h3>慢慢逛，慢慢試</h3>
+            <p>摸布料、看顏色、試版型，讓身體先回答。</p>
           </article>
           <article class="step">
-            <div class="step-num">3</div>
-            <h3>掃 QR code</h3>
-            <p>看完整花語，還有藏在心裡的小渴望。</p>
+            <span class="step-num">3</span>
+            <h3>結帳時抽花卡</h3>
+            <p>花卡上的花看得到，卡裡藏著什麼話，要掃 QR code 才知道。</p>
           </article>
           <article class="step">
-            <div class="step-num">4</div>
-            <h3>把它帶走</h3>
-            <p>拍照、收藏、傳給朋友，看看她們是不是也覺得準。</p>
+            <span class="step-num">4</span>
+            <h3>當場掃、當場確認</h3>
+            <p>出示實體花卡與手機頁面，店員會依照頁面內容協助確認。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="gallery">
+    <section class="rewards" id="rewards">
       <div class="inner">
         <div class="section-head">
-          <h2>VIP 活動現場先偷看</h2>
-          <p>大家抽完都很忙，忙著拍照、忙著交換看、忙著說「這張真的有準」。</p>
+          <p class="section-kicker">SIX FLOWER CARDS</p>
+          <h2>六朵夏天的花，先讓妳看見名字</h2>
+          <p>牆上的花卡可以看、可以選，也可以憑直覺抽。每一張卡裡的花語、ASify 故事與當日驚喜，都留在 QR code 裡。抽到那一張，再打開。</p>
         </div>
-        <div class="photo-grid">
-          <img src="https://i.ibb.co/3mKL2mkn/2edf3a0e4e38.jpg" alt="Nana 老師與 ASify 玫瑰花卡">
-          <div class="photo-stack">
-            <img src="https://i.ibb.co/pv1NFMqx/b2fac036daf6.jpg" alt="軒軒老師與 Vivi 老師拿著 ASify 花卡">
-            <img src="https://i.ibb.co/ks09wxzH/4b21b6aaf619.jpg" alt="來賓展示 ASify 玫瑰花卡與 QR code">
-          </div>
+        <div class="reward-grid">
+          <article class="reward-card">
+            <div class="reward-flower">
+              <span>牽牛花</span>
+              <i class="mini-flower" style="--c1:#6975ac;--c2:#c9dfdd"></i>
+            </div>
+            <h3>牽牛花</h3>
+            <p>清晨會打開的花。妳會抽到它嗎？</p>
+          </article>
+          <article class="reward-card">
+            <div class="reward-flower">
+              <span>茉莉</span>
+              <i class="mini-flower" style="--c1:#f7f2dc;--c2:#a58b42"></i>
+            </div>
+            <h3>茉莉</h3>
+            <p>小小一朵，靠近才知道香氣在哪裡。</p>
+          </article>
+          <article class="reward-card">
+            <div class="reward-flower">
+              <span>睡蓮</span>
+              <i class="mini-flower" style="--c1:#dba3bc;--c2:#9b5e83"></i>
+            </div>
+            <h3>睡蓮</h3>
+            <p>浮在水面上的花，像把秘密放得很輕。</p>
+          </article>
+          <article class="reward-card">
+            <div class="reward-flower">
+              <span>向日葵</span>
+              <i class="mini-flower" style="--c1:#f5bd3f;--c2:#b16d22"></i>
+            </div>
+            <h3>向日葵</h3>
+            <p>一眼就會看見的明亮，卡裡藏的話先保留。</p>
+          </article>
+          <article class="reward-card">
+            <div class="reward-flower">
+              <span>扶桑花</span>
+              <i class="mini-flower" style="--c1:#ee7451;--c2:#ad3f47"></i>
+            </div>
+            <h3>扶桑花</h3>
+            <p>很夏天的一朵花，適合現場看它有多亮。</p>
+          </article>
+          <article class="reward-card">
+            <div class="reward-flower">
+              <span>雞蛋花</span>
+              <i class="mini-flower" style="--c1:#f7f1d2;--c2:#d7a43f"></i>
+            </div>
+            <h3>雞蛋花</h3>
+            <p>像假期一樣的花，抽到時再看它想說什麼。</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="visit" class="visit">
-      <div class="inner visit-card">
-        <div>
-          <h2>ASify 敦化店</h2>
-          <p>七月，玫瑰花卡牆預計移到 ASify 敦化店。來試穿、來聊天，也來抽一張屬於妳的玫瑰。</p>
-          <div class="facts">
-            <div class="fact">
-              <strong>地址</strong>
-              <span>台北市大安區忠孝東路四段216巷8弄16號1樓</span>
-            </div>
-            <div class="fact">
-              <strong>交通</strong>
-              <span>捷運忠孝敦化站 3 號出口步行 1 分鐘</span>
-            </div>
-            <div class="fact">
-              <strong>營業時間</strong>
-              <span>週一至週日 12:30-20:30</span>
-            </div>
-          </div>
+    <section class="rules" id="rules">
+      <div class="inner">
+        <div class="section-head">
+          <p class="section-kicker">EVENT RULES</p>
+          <h2>活動規則</h2>
+          <p>花卡活動限定 ASify 敦化店。結帳時抽卡、當場掃 QR code，店員會依照實體花卡與手機頁面協助確認。</p>
         </div>
-        <aside class="visit-aside">
-          <p>活動正式細節確認後，這個頁面會更新花卡牆開放方式與注意事項。</p>
-          <a class="button" href="https://maps.app.goo.gl/NzHFo9XfyuFwLAYr6" target="_blank" rel="noopener">打開 Google 地圖</a>
-          <p class="fine-print">國定假日營業時間若有調整，請以 ASify 官方 FB、IG 公告為準。</p>
-        </aside>
+        <div class="rule-grid">
+          <article class="rule-card">
+            <h3>活動期間</h3>
+            <p>2026 年 7 月整月。</p>
+          </article>
+          <article class="rule-card">
+            <h3>抽卡時機</h3>
+            <p>結帳時抽一張花卡，當場掃 QR code 確認內容。</p>
+          </article>
+          <article class="rule-card">
+            <h3>使用時間</h3>
+            <p>優惠限抽卡當日使用。</p>
+          </article>
+          <article class="rule-card">
+            <h3>適用商品</h3>
+            <p>限定正價商品。</p>
+          </article>
+          <article class="rule-card">
+            <h3>優惠併用</h3>
+            <p>不可與其他優惠併用。</p>
+          </article>
+          <article class="rule-card">
+            <h3>贈品數量</h3>
+            <p>贈品數量有限，送完為止。</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <p>ASify｜讓你重新愛上鏡中的自己</p>
+    <section class="store" id="store">
+      <div class="inner store-panel">
+        <div class="store-copy">
+          <p class="section-kicker">DUNHUA STORE</p>
+          <h2>七月，來敦化店看花卡牆</h2>
+          <p>六月 VIP 活動裡的花卡牆，七月會在敦化店延續。挑好想帶回家的 ASify，再讓花卡替今天收尾。</p>
+          <a class="store-link" href="https://maps.app.goo.gl/NzHFo9XfyuFwLAYr6">打開 Google Maps</a>
+        </div>
+        <div class="store-box">
+          <dl>
+            <div>
+              <dt>ASify 敦化店</dt>
+              <dd>台北市大安區忠孝東路四段216巷8弄16號1樓</dd>
+            </div>
+            <div>
+              <dt>交通</dt>
+              <dd>捷運忠孝敦化站 3 號出口步行 1 分鐘</dd>
+            </div>
+            <div>
+              <dt>營業時間</dt>
+              <dd>週一至週日 12:30-20:30</dd>
+            </div>
+            <div>
+              <dt>電話</dt>
+              <dd>0978608786</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      ASify 七月敦化店花卡活動｜實際優惠與贈品依現場公告與庫存為準
     </footer>
   </main>
 </body>

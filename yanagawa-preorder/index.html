@@ -177,13 +177,16 @@
     .hero-image {
       position: relative;
       border-radius: 4px;
-      overflow: hidden;
+      overflow: visible;
       box-shadow: 0 28px 70px rgba(64, 52, 65, .13);
     }
 
     .hero-image img {
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      background: #f4e9dd;
     }
 
     .quiet-line {
@@ -495,7 +498,7 @@
       }
 
       .hero-image img {
-        aspect-ratio: 1 / .92;
+        aspect-ratio: auto;
       }
 
       .manifesto-grid {
@@ -565,15 +568,6 @@
         <div class="hero-image">
           <img src="./assets/yanagawa-preorder-main.jpg" alt="ASify x Yanagawa 柳川老師聯名系列八折預購資訊">
         </div>
-      </div>
-    </section>
-
-    <section class="campaign-visual" aria-label="ASify with Yanagawa 預購資訊">
-      <div class="inner">
-        <figure class="large-art">
-          <img src="./assets/yanagawa-preorder-main.jpg" alt="ASify x Yanagawa 柳川老師聯名系列八折預購資訊">
-        </figure>
-        <p class="caption-note">八折預購中，實際優惠與出貨資訊請以 ASify 官網預購頁為準。</p>
       </div>
     </section>
 
